@@ -1,0 +1,12 @@
+.m-subnav {
+    z-index: 90;
+    height: 35px;
+    box-sizing: border-box;
+    background-color: #C20C0C;
+    border-bottom: 1px solid #a40011;
+}
+.m-subnav .wrap {
+    width: 1100px;
+    height: 34px;
+    margin: 0 auto;
+}
