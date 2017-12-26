@@ -10,19 +10,22 @@ import {
 } from 'react-router-dom'
 
 import SubNav from './../../components/subNav/index'
-import TopList from "./../TopList/index";
+import TopList from "./../TopList/index"
+import Banner from './../../components/banner/Banner'
 
 export default class Discover extends Component {
     constructor(props) {
         super(props);
         console.log(this)
     }
+
     render() {
         const history = this.props.history   
         return (
             <div>
                 <SubNav history={history} />
-                <h1>discover</h1>
+                <Banner />
+
             </div>
         )
     }
