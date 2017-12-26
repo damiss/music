@@ -1,12 +1,4 @@
 import React, { Component } from 'react'
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Redirect,
-    withRouter,
-    HashRouter
-} from 'react-router-dom'
 
 import './../../style/home.css'
 import Discover from './../Discover/index'

@@ -1,13 +1,4 @@
 import React, { Component } from 'react'
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Redirect,
-    withRouter,
-    HashRouter,
-    NavLink
-} from 'react-router-dom'
 
 import SubNav from './../../components/subNav/index'
 import TopList from "./../TopList/index"

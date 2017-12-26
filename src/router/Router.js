@@ -3,10 +3,7 @@ import {
     BrowserRouter as Router,
     Route,
     Link,
-    Redirect,
-    withRouter,
     HashRouter,
-    NavLink,
     Switch
 } from 'react-router-dom'
 
