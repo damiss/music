@@ -4,30 +4,30 @@ import {
     Route,
     Link,
     Redirect,
-    withRouter
+    withRouter,
+    HashRouter
 } from 'react-router-dom'
 
 import './../../style/home.css'
-import Discover from "./Discover/index";
+import Discover from './../Discover/index'
 
 export default class Home extends Component {
+    constructor(props) {
+        super(props);
+        console.log(this);
+
+        this.handlePath = this.handlePath.bind(this)
+    }
+
+    handlePath() {
+        this.props.history.push("/discover")
+    }
+
     render() {
+        const history = this.props.history;
         return (
             <div>
-                <div className="home-warp">
-                    <div className="m-subnav">
-                        <div className="wrap">
-                            <div className="nav">
-                                <Router>
-                                    <div>
-                                        <Link to="/discover">discover</Link>
-                                        <Route exact path="/" component={Discover} />
-                                    </div>
-                                </Router>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Discover history={history} />
             </div>
         )
     }

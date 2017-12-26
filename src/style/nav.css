@@ -1,7 +1,11 @@
 .m-top {
+    background: #242424;
+    
+}
+.wrap {
     width: 1100px;
     height: 69px;
-    background: #242424;
+    margin: 0 auto;
     border-bottom: 1px solid #000
 }
 .logo {

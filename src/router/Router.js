@@ -6,7 +6,8 @@ import {
     Redirect,
     withRouter,
     HashRouter,
-    NavLink
+    NavLink,
+    Switch
 } from 'react-router-dom'
 
 import Home from './../pages/Home/index'
@@ -15,6 +16,8 @@ import Hot from './../pages/Hot/index'
 import db from './../components/utils/index'
 
 import './../style/nav.css'
+import Discover from './../pages/Discover/index';
+import TopList from '../pages/TopList/index';
 
 class App extends React.Component {
     constructor(props) {
@@ -49,38 +52,42 @@ class App extends React.Component {
                             <ul className="nav">
                                 <li
                                     onClick={this.handleNav.bind(null, "index")}
-                                    className={this.state.nav == "index" ? 'nav-active' : ""}
+                                    className={this.state.nav === "index" ? 'nav-active' : ""}
                                 >
                                     <span>
-                                        <Link to="/">index</Link>
+                                        <Link to="/">发现音乐</Link>
                                         <sub className="cor">&nbsp;</sub>
                                     </span>
                                 </li>
                                 <li
                                     onClick={this.handleNav.bind(null, "hot")}
-                                    className={this.state.nav == "hot" ? 'nav-active' : ""}
+                                    className={this.state.nav === "hot" ? 'nav-active' : ""}
                                 >
                                     <span>
-                                        <Link to="/hot">hot</Link>
+                                        <Link to="/hot">我的音乐</Link>
                                         <sub className="cor">&nbsp;</sub>
                                     </span>
                                 </li>
                                 <li
                                     onClick={this.handleNav.bind(null, "login")}
-                                    className={this.state.nav == "login" ? 'nav-active' : ""}
+                                    className={this.state.nav === "login" ? 'nav-active' : ""}
                                 >
                                     <span>
-                                        <Link to="/login">login</Link>
+                                        <Link to="/login">朋友</Link>
                                         <sub className="cor">&nbsp;</sub>
                                     </span>
                                 </li>
                             </ul>
                         </div>
                     </div>
-
-                    <Route exact path="/" component={Home} />
-                    <Route path="/hot" component={Hot} />
-                    <Route path="/login" component={Login} />
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route path="/hot" component={Hot} />
+                        <Route path="/login" component={Login} />
+                        <Route path="/discover/toplist" component={TopList} />
+                        <Route path="/discover" component={Discover} /> 
+                    </Switch>
+                    
                 </div>
             </HashRouter>
         )
