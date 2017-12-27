@@ -34,7 +34,6 @@ class App extends React.Component {
         db.save(["nav"], { "nav": clickNav });
     }
     componentDidMount() {
-        console.log("did")
         this.setState({
             nav: db.get("nav")
         })
