@@ -17,7 +17,6 @@ export default class Discover extends Component {
             <div>
                 <SubNav history={history} />
                 <Banner bannerStore={bannerStore} />
-
             </div>
         )
     }

@@ -1,62 +1,72 @@
-.m-top {
-    background: #242424;
-    
-}
-.wrap {
-    width: 1100px;
-    height: 69px;
-    margin: 0 auto;
-    border-bottom: 1px solid #000
-}
-.logo {
-    float: left;
-    width: 157px;
-    height: 70px;
-    padding-right: 20px;
-    /* background: url('./../img/topbar.png') no-repeat 0 9999px; */
-    background-position: 0 0;
-}
-.nav {
-    float: left;
-}
-.nav li {
-    float: left;
-    height: 70px;
-    position: relative
-}
-.nav li:hover span a{
-    background: #000;
-}
-.nav li:hover span a {
-    color: #fff
-}
-.nav li span a {
-    display: block;
-    line-height: 70px;
-    padding: 0 17px;
-    text-decoration: none;
-    height: 70px;
-    color: #ccc;
-    font-size: 14px;
-}
-.nav-active {
-    background: #000;
-}
-.nav-active span a {
-    color: #fff !important
-}
-.nav-active .cor {
-    display: block;
-    background: url('./../img/topbar.png') no-repeat 0 9999px;
-    position: absolute;
-    left: 50%;
-    top: 64px;
-    width: 12px;
-    height: 7px;
-    margin-left: -6px;
-    overflow: hidden;
-    background-position: -226px 0;
-}
-.nav .has-cor {
-    display: block
-}
+     :global(.m-top) {
+        background: #242424;
+    }
+
+     :global(.wrap) {
+        width: 1100px;
+        height: 69px;
+        margin: 0 auto;
+        border-bottom: 1px solid #000
+    }
+
+     :global(.logo) {
+        float: left;
+        width: 157px;
+        height: 70px;
+        padding-right: 20px;
+        /* background: url('./../img/topbar.png') no-repeat 0 9999px; */
+        background-position: 0 0;
+    }
+
+     .nav{
+        float: left;
+    }
+
+    .nav li {
+        float: left;
+        height: 70px;
+        position: relative
+    }
+
+    .nav li:hover span a {
+        background: #000;
+    }
+
+    .nav li:hover span a {
+        color: #fff
+    }
+
+     .nav li span a {
+        display: block;
+        line-height: 70px;
+        padding: 0 17px;
+        text-decoration: none;
+        height: 70px;
+        color: #ccc;
+        font-size: 14px;
+    }
+
+    .active {
+        background: #000;
+    }
+
+    .active span a {
+        color: #fff !important
+    }
+
+    .active .cor {
+        display: block;
+        background: url('./../img/topbar.png') no-repeat 0 9999px;
+        position: absolute;
+        left: 50%;
+        top: 64px;
+        width: 12px;
+        height: 7px;
+        margin-left: -6px;
+        overflow: hidden;
+        background-position: -226px 0;
+    }
+
+     :global(.has-cor) {
+        display: block
+    }

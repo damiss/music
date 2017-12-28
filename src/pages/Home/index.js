@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import './../../style/home.css'
+import styles from  './../../style/home.css'
 import Discover from './../Discover/index'
 
 export default class Home extends Component {

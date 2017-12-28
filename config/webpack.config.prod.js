@@ -180,6 +180,8 @@ module.exports = {
                     {
                       loader: require.resolve('css-loader'),
                       options: {
+                        modules: true,   // 新增对css modules的支持
+                        localIdentName: '[name]__[local]__[hash:base64:5]', //
                         importLoaders: 1,
                         minimize: true,
                         sourceMap: shouldUseSourceMap,
@@ -230,6 +232,7 @@ module.exports = {
           // ** STOP ** Are you adding a new loader?
           // Make sure to add the new loader(s) before the "file" loader.
         ],
+        
       },
     ],
   },

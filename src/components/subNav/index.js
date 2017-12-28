@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import './../../style/home.css'
+import styles from './../../style/home.css'
 
 export default class SubNav extends Component {
     constructor(props) {

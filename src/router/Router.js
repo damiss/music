@@ -12,7 +12,7 @@ import Login from './../pages/Login/index'
 import Hot from './../pages/Hot/index'
 import db from './../components/utils/index'
 
-import './../style/nav.css'
+import styles from './../style/nav.css'
 import Discover from './../pages/Discover/index';
 import TopList from '../pages/TopList/index';
 
@@ -45,32 +45,32 @@ class App extends React.Component {
                     <div className="m-top">
                         <div className="wrap">
                             <div className="logo"></div>
-                            <ul className="nav">
+                            <ul className={styles.nav}>
                                 <li
                                     onClick={this.handleNav.bind(null, "index")}
-                                    className={this.state.nav === "index" ? 'nav-active' : ""}
+                                    className={this.state.nav === "index" ? styles.active : ""}
                                 >
                                     <span>
                                         <Link to="/">发现音乐</Link>
-                                        <sub className="cor">&nbsp;</sub>
+                                        <sub className={styles.cor}>&nbsp;</sub>
                                     </span>
                                 </li>
                                 <li
                                     onClick={this.handleNav.bind(null, "hot")}
-                                    className={this.state.nav === "hot" ? 'nav-active' : ""}
+                                    className={this.state.nav === "hot" ? styles.active : ""}
                                 >
                                     <span>
                                         <Link to="/hot">我的音乐</Link>
-                                        <sub className="cor">&nbsp;</sub>
+                                        <sub className={styles.cor}>&nbsp;</sub>
                                     </span>
                                 </li>
                                 <li
                                     onClick={this.handleNav.bind(null, "login")}
-                                    className={this.state.nav === "login" ? 'nav-active' : ""}
+                                    className={this.state.nav === "login" ? styles.active : ""}
                                 >
                                     <span>
                                         <Link to="/login">朋友</Link>
-                                        <sub className="cor">&nbsp;</sub>
+                                        <sub className={styles.cor}>&nbsp;</sub>
                                     </span>
                                 </li>
                             </ul>

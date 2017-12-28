@@ -1,24 +1,24 @@
-.m-subnav {
+    :global(.m-subnav) {
     z-index: 90;
     height: 35px;
     box-sizing: border-box;
     background-color: #C20C0C;
     border-bottom: 1px solid #a40011;
 }
-.m-subnav .wrap {
+    :global(.wrap) {
     width: 1100px;
     height: 34px;
     margin: 0 auto;
 }
-.sub-nav {
+    :global(.sub-nav) {
     padding-left: 180px
 }
-.sub-nav-con li {
+    :global(.sub-nav-con) li {
     float: left;
     height: 34px;
     text-align: center;
 }
-.sub-nav-con li em {
+    :global(.sub-nav-con) li em {
     font-style: normal;
     background: #9B0909;
     display: inline-block;
