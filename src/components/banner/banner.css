@@ -1,3 +1,8 @@
 .wrap {
+    width: 100%;
+    background: grey;
+}
+.banner {
     width: 1100px;
+    margin: 0 auto;
 }

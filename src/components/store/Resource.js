@@ -1,15 +1,15 @@
 import { observable } from 'mobx';
 import axios from './../axios/index'
 
-export const bannerStore = observable({
-    bannerImgs: []
+export const resourceStore = observable({
+    data: []
 })
 
-bannerStore.getDataBanner = function getData() {
-    axios.get("/banner")
+resourceStore.getDataRes = function getData() {
+    axios.get("/recommend/resource")
         .then(function (response) {
             console.log(response);
-            bannerStore.bannerImgs = response.data.banners
+            resourceStore.data = response
         })
         .catch(function (error) {
             console.log(error);
