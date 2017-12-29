@@ -17,7 +17,7 @@ export default class Banner extends Component {
     }
     componentWillMount() {
         this.props.bannerStore.getDataBanner();
-        this.timer = setInterval(() => {
+        /* this.timer = setInterval(() => {
             if (this.state.currentSIndex > 0) {
                 this.setState({
                     currentSIndex: --this.state.currentSIndex
@@ -27,7 +27,7 @@ export default class Banner extends Component {
                     currentSIndex: this.props.bannerStore.bannerImgs.length - 1
                 })
             }
-        }, 3000)
+        }, 3000) */
     }
     componentWillUnmount() {
         clearInterval(this.timer)

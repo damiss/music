@@ -13,10 +13,18 @@ export default class Resource extends Component {
         this.props.resource.getDataRes()
     }
     render() {
-        console.log(this.props)
+        const goodData = this.props.resource.data.$mobx.values;
+        const goodHtml = goodData.map((item) => (
+            <li>
+                <div><img src={item.coverImgUrl} alt=""/></div>
+                <p>{item.name}</p>
+            </li>
+        ))
         return (
             <div>
-                res
+                <ul>
+                    { goodHtml }
+                </ul>
             </div>
         )
     }
