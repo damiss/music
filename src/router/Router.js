@@ -15,6 +15,7 @@ import db from './../components/utils/index'
 import styles from './../style/nav.css'
 import Discover from './../pages/Discover/index';
 import TopList from '../pages/TopList/index';
+import Playlist from './../pages/Playlist'
 
 class App extends React.Component {
     constructor(props) {
@@ -82,6 +83,7 @@ class App extends React.Component {
                         <Route path="/login" component={Login} />
                         <Route path="/discover/toplist" component={TopList} />
                         <Route path="/discover" component={Discover} /> 
+                        <Route path="/playlist" component={Playlist} /> 
                     </Switch>
                     
                 </div>

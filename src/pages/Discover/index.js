@@ -4,6 +4,8 @@ import SubNav from './../../components/subNav/index'
 import TopList from "./../TopList/index"
 import Banner from './../../components/banner/Banner'
 import { bannerStore } from './../../components/store/Banner'
+import Resource from './Resource'
+import { resourceStore } from './../../components/store/Resource'
 
 export default class Discover extends Component {
     constructor(props) {
@@ -17,6 +19,7 @@ export default class Discover extends Component {
             <div>
                 <SubNav history={history} />
                 <Banner bannerStore={bannerStore} />
+                <Resource resource={resourceStore} history={history} />
             </div>
         )
     }
