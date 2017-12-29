@@ -22,7 +22,7 @@ export default class SubNav extends Component {
             <div>
                 <div className="home-warp">
                     <div className="m-subnav">
-                        <div className="wrap">
+                        <div className={styles.wrap}>
                             <div className="sub-nav">
                                 <ul className="sub-nav-con">
                                     <li onClick={this.handlePath}><em>推荐</em></li>

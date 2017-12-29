@@ -44,7 +44,7 @@ class App extends React.Component {
             <HashRouter>
                 <div>
                     <div className="m-top">
-                        <div className="wrap">
+                        <div className={styles.wrap}>
                             <div className="logo"></div>
                             <ul className={styles.nav}>
                                 <li

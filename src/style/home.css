@@ -5,7 +5,7 @@
     background-color: #C20C0C;
     border-bottom: 1px solid #a40011;
 }
-    :global(.wrap) {
+    .wrap {
     width: 1100px;
     height: 34px;
     margin: 0 auto;
