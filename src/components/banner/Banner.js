@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { observable, autorun } from 'mobx';
 import { observer } from 'mobx-react';
+import classNames from 'classnames'
 
 import axios from './../axios/index'
 import style from './banner.css'
@@ -61,15 +62,27 @@ export default class Banner extends Component {
         const Banners = this.props.bannerStore.bannerImgs.map((item) => item.pic)
         const encodeId = this.props.bannerStore.bannerImgs.map((item) => item.encodeId)
         console.log(this.props.bannerStore.bannerImgs[0])
+
+        let cx = classNames.bind(style);
+        let className = cx({
+            [style.left]: true,
+            [style.bg]: true,
+            [style.hand]: true
+        })
+        let right = cx({
+            [style.right]: true,
+            [style.bg]: true,
+            [style.hand]: true
+        })
         return (
             <div>
                 <div className={style.wrap}>
-                    <div className="banner-con">
-                        <div data-id={encodeId[this.state.currentSIndex]}>
+                    <div className={style.banner}>
+                        <div data-id={encodeId[this.state.currentSIndex]} className={style.bannerBox}>
                             <img src={Banners[this.state.currentSIndex]} alt=""/>
                         </div>
-                        <div onClick={this.handleLeftBanner}>left</div>
-                        <div onClick={this.handleRightBanner}>right</div>
+                        <div className={className} onClick={this.handleLeftBanner}>left</div>
+                        <div className={right} onClick={this.handleRightBanner}>right</div>
                     </div>
                 </div>
             </div>

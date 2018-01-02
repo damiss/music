@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import goLogin from './../../components/store/login'
+import axios from './../../components/axios/index'
 
 export default class Login extends Component {
     constructor(props) {
@@ -13,6 +14,7 @@ export default class Login extends Component {
         this.handleLogin = this.handleLogin.bind(this);
         this.handleChangePhone = this.handleChangePhone.bind(this);
         this.handleChangePassWord = this.handleChangePassWord.bind(this);
+        this.handleRefresh = this.handleRefresh.bind(this);
     }
 
     
@@ -29,6 +31,15 @@ export default class Login extends Component {
             password: event.target.value
         })
     }
+    handleRefresh() {
+        axios.get('/login/refresh')
+        .then(function(response) {
+            console.log(response)
+        })
+        .catch(function(error) {
+            console.log(error)
+        })
+    }
     render() {
         return (
             <div>
@@ -38,6 +49,8 @@ export default class Login extends Component {
                     <label>password: <input type="password" onChange={this.handleChangePassWord} /></label>
                 </form>
                 <button onClick={this.handleLogin}>Login</button>
+                <hr/>
+                <button onClick={this.handleRefresh}>Refresh</button>
             </div>
         )
     }

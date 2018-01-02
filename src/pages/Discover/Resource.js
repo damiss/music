@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { observable, autorun } from 'mobx';
 import { observer } from 'mobx-react';
+import classNames from 'classnames';
 
+import styles from './../../style/resource.css'
 import axios from './../../components/axios/index'
 
 @observer
@@ -9,29 +11,24 @@ export default class Resource extends Component {
     constructor(props) {
         super(props);
 
-        this.handleClick = this.handleClick.bind(this)
-    }
-    componentWillMount() {
-        this.props.resource.getDataRes()
-    }
-    handleClick(id) {
-        this.props.history.push(`/playlist?id=${id}`)
     }
     render() {
-        const goodData = this.props.resource.data.$mobx.values;
-        const goodHtml = goodData.map((item) => (
-            <li key={item.id}
-                onClick={this.handleClick.bind(null, item.id)}
-            >
-                <div><img src={item.coverImgUrl} alt=""/></div>
-                <p>{item.name}</p>
-            </li>
-        ))
+        var cx = classNames({
+            [styles.discoverModule]: true,
+            [styles.clear]: true
+        })
         return (
-            <div>
-                <ul>
-                    { goodHtml }
-                </ul>
+            <div className={cx}>
+                <div className={styles.hotCon}>
+                    <div className={styles.hotLeft}>
+                        <div className={styles.wrap}>
+                                {this.props.children}
+                            {/* <ul>
+                                {goodHtml}
+                            </ul> */}
+                        </div>
+                    </div>
+                </div>                
             </div>
         )
     }
