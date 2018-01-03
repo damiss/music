@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { observable, autorun } from 'mobx';
 import { observer } from 'mobx-react';
+import classNames from 'classnames'
 
 import axios from './../../components/axios/index'
+import styles from './../../style/cvrList.css'
 
 @observer
 export default class Cvrlist extends Component {
@@ -27,11 +29,41 @@ export default class Cvrlist extends Component {
                 <p>{item.name}</p>
             </li>
         )) */
-        console.log(this.props)
+        /* (item) => (
+            <li key={item.id}
+                onClick={this.handleClick.bind(null, item.id)}
+            >
+                <div className={styles.cover}><img src={item.picUrl} alt="" /></div>
+            </li>
+        ) */
+        console.log(this.props.personalized)
+        const listData = this.props.personalized.data;
+        const _this = this;
+        var i = 0;
+        const listHtml = listData.map(function(item) {
+            if(i < 8) {
+                console.log(i)
+                i++;
+                return (
+                    <li key={item.id}
+                        onClick={_this.handleClick.bind(null, item.id)}
+                    >
+                        <div className={styles.cover}><img src={item.picUrl} alt="" /></div>
+                    </li>
+                )
+            }else {
+                return;
+            }
+        })
+        
+        const cx = classNames({
+            [styles.clear]: true,
+            [styles.cvrlist]: true
+        })
         return (
             <div>
-                <ul>
-                    {/* {goodHtml} */}
+                <ul className={cx}>
+                    {listHtml}
                 </ul>
             </div>
         )

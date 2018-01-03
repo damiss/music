@@ -1,0 +1,26 @@
+.cvrlist {
+    margin: 20px 0 0 -42px;
+
+}
+.cvrlist li {
+    width: 140px;
+    height: 204px;
+    padding-left: 42px;
+    float: left;
+}
+.cover {
+    width: 140px;
+    height: 140px;
+    float: left;
+}
+.cover img {
+    height: 100%;
+    width: 100%
+}
+.clear::after {
+    clear: both;
+    content: '.';
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
