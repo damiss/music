@@ -7,6 +7,7 @@ import styles from './../../style/resource.css'
 import axios from './../../components/axios/index'
 
 import Login from './Login'
+import Layer from './../../components/layer/index'
 
 @observer
 export default class Resource extends Component {
