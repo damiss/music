@@ -46,9 +46,26 @@ export default class Cvrlist extends Component {
                 i++;
                 return (
                     <li key={item.id}
-                        onClick={_this.handleClick.bind(null, item.id)}
+                        
                     >
-                        <div className={styles.cover}><img src={item.picUrl} alt="" /></div>
+                        <div className={[styles.cover]}
+                            onClick={_this.handleClick.bind(null, item.id)}
+                        >
+                            <img src={item.picUrl} alt="" />
+                            <a className={styles.mask}></a> 
+                            <div className={styles.button}>
+                                <span className={styles.iconPlay}></span>    
+                                <span className={styles.iconHeadset}></span>
+                                <span className={styles.nb}>
+                                    {(Math.round((item.playCount /10000) * 100) / 100)}万
+                                </span>
+                            </div>  
+                        </div>
+                        <p className={styles.dec}
+                            onClick={_this.handleClick.bind(null, item.id)}
+                        >
+                            <a href="javascript: ;">{item.name}</a>
+                        </p>
                     </li>
                 )
             }else {

@@ -6,6 +6,8 @@ import classNames from 'classnames';
 import styles from './../../style/resource.css'
 import axios from './../../components/axios/index'
 
+import Login from './Login'
+
 @observer
 export default class Resource extends Component {
     constructor(props) {
@@ -28,7 +30,10 @@ export default class Resource extends Component {
                             </ul> */}
                         </div>
                     </div>
-                </div>                
+                </div> 
+                <div className={styles.r}>
+                    <Login />            
+                </div>               
             </div>
         )
     }

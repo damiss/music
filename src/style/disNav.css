@@ -1,9 +1,13 @@
 .tit {
+    background: url("./../img/index.png") no-repeat 0 9999px
+}
+.tit {
     height: 33px;
     padding: 0 10px 0 34px;
     background-position: -225px -156px;
     border-bottom: 2px solid #C10D0C;
 }
+
 .name {
     float: left;
     font-size: 20px;

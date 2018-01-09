@@ -1,0 +1,33 @@
+.lBg {
+    background: url("./../img/index.png") no-repeat 0 9999px
+}
+.myInfo {
+    height: 126px;
+    padding-top: 0;
+    background-position: 0 0 
+}
+
+.note {
+    width: 205px;
+    margin: 0 auto;
+    padding: 16px 0;
+    line-height: 22px;
+    color: #666;
+    font-size: 12px
+}
+.loginBtn {
+    margin: 0 auto;
+    display: block;
+    width: 100px;
+    height: 31px;
+    line-height: 31px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 1px 0 #8a060b;
+    background-position: 0 -195px;
+    text-decoration-line: none;
+    font-size: 12px
+}
+.loginBtn:hover {
+    background-position: -110px -195px;
+}

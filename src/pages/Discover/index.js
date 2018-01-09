@@ -8,25 +8,64 @@ import Resource from './Resource'
 import { resourceStore } from './../../components/store/Resource'
 import DisNav from './../../components/disNav/DisNav'
 import Cvrlist from './Cvrlist'
-import {personalized} from './../../components/store/Personalized'
+import { personalized } from './../../components/store/Personalized'
+import Recommend from "./Recommend"
 
 export default class Discover extends Component {
     constructor(props) {
         super(props);
         console.log(this)
+        this.state = {
+            _csrf: this.handleGetCookie("_csrf") ? this.handleGetCookie("_csrf") : false
+        }
+        this.handleGetCookie = this.handleGetCookie.bind(this)
     }
 
+    componentWillMount() {
+        console.log(this.handleGetCookie("_csrf"));
+    }
+
+    handleGetCookie(c_name) {
+        if (document.cookie.length > 0) {
+            var c_start = document.cookie.indexOf(c_name + "=")
+            if (c_start !== -1) {
+                c_start = c_start + c_name.length + 1
+                var c_end = document.cookie.indexOf(";", c_start)
+                if (c_end === -1) c_end = document.cookie.length
+                return unescape(document.cookie.substring(c_start, c_end))
+            }
+        }
+        return ""
+    }
     render() {
-        const history = this.props.history   
+        const history = this.props.history
         return (
             <div>
                 <SubNav history={history} />
                 <Banner bannerStore={bannerStore} />
                 <Resource>
-                    <DisNav history={history} />
+                    <DisNav history={history} title={"热门推荐"} />
                     <Cvrlist history={history} personalized={personalized} />
+                    <RecMix history={history} onLogin={this.state._csrf} />
                 </Resource>
             </div>
         )
+    }
+}
+
+/* const RecMix = (props) => (
+    
+) */
+function RecMix(props) {
+    if (props.onLogin) {
+        return (
+            <div>
+                {console.log(this)}
+                <DisNav history={props.history} title={"个性化推荐"} />
+                <Recommend />
+            </div>
+        )
+    }else {
+        return false
     }
 }

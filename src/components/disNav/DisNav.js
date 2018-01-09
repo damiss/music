@@ -21,7 +21,7 @@ export default class DisNav extends Component {
         return (
             <div className={cx}>
                 <span className={styles.name} onClick={this.handlePath}>
-                    热门推荐
+                    {this.props.title}
                 </span> 
             </div>
         )
