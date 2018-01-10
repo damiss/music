@@ -1,16 +1,36 @@
+import { observable, action, runInAction, useStrict } from 'mobx';
+
 import axios from './../axios/index'
-// 为给定 ID 的 user 创建请求
-export default function Login(phone="", password="") {
-    axios.get('/login/cellphone', {
-        params: {
-            phone: phone,
-            password: password
-        }
-    })
-        .then(function (response) {
-            console.log(response);
+
+class Login {
+    @observable loginState
+    @observable user
+
+    // 初始化 state
+    constructor() {
+        this.loginState = false;
+        this.user = null;
+    }
+
+    @action loginIn = async (phone, password) =>  {
+        const user = await axios.get("login/cellphone", {
+            params: {
+                phone: phone,
+                password: password
+            } 
         })
-        .catch(function (error) {
-            console.log(error);
+        runInAction(() => {
+            this.user = user;
+            console.log(this.user)
         });
+    }
+
+    @action setLoginState(data) {
+        this.loginState = true;
+    }
+    @action setUser(data) {
+        this.user = data;
+    }
 }
+
+export default new Login()

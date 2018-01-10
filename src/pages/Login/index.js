@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
+import { observable, autorun } from 'mobx';
+import { inject, observer } from 'mobx-react';
 
-import goLogin from './../../components/store/login'
 import axios from './../../components/axios/index'
+import { login } from './../../components/store/login'
 
+@inject('login',)
+@observer
 export default class Login extends Component {
     constructor(props) {
         super(props);
@@ -16,10 +20,11 @@ export default class Login extends Component {
         this.handleChangePassWord = this.handleChangePassWord.bind(this);
         this.handleRefresh = this.handleRefresh.bind(this);
     }
-
+    componentWillMount() {
+    }
     
     handleLogin(event) {
-        goLogin(this.state.phone, this.state.password)
+        this.props.login.loginIn(this.state.phone, this.state.password)
     }
     handleChangePhone(event) {
         this.setState({

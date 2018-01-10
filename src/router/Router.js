@@ -7,6 +7,7 @@ import {
     Switch
 } from 'react-router-dom'
 
+
 import Home from './../pages/Home/index'
 import Login from './../pages/Login/index'
 import Hot from './../pages/Hot/index'
@@ -53,7 +54,7 @@ class App extends React.Component {
                                 >
                                     <span>
                                         <Link to="/">发现音乐</Link>
-                                        <sub className={styles.cor}>&nbsp;</sub>
+                                        <sub className={styles.cor}></sub>
                                     </span>
                                 </li>
                                 <li
@@ -62,7 +63,7 @@ class App extends React.Component {
                                 >
                                     <span>
                                         <Link to="/hot">我的音乐</Link>
-                                        <sub className={styles.cor}>&nbsp;</sub>
+                                        <sub className={styles.cor}></sub>
                                     </span>
                                 </li>
                                 <li
@@ -71,7 +72,7 @@ class App extends React.Component {
                                 >
                                     <span>
                                         <Link to="/login">朋友</Link>
-                                        <sub className={styles.cor}>&nbsp;</sub>
+                                        <sub className={styles.cor}></sub>
                                     </span>
                                 </li>
                             </ul>
