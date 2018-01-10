@@ -1,17 +1,24 @@
-import { observable } from 'mobx';
+import { observable, action, runInAction, useStrict } from 'mobx';
 import axios from './../axios/index'
 
-export const bannerStore = observable({
-    bannerImgs: []
-})
+class Banner {
+    @observable bannerImgs
+    @observable bannerLen
 
-bannerStore.getDataBanner = function getData() {
-    axios.get("/banner")
-        .then(function (response) {
-            console.log(response);
-            bannerStore.bannerImgs = response.data.banners
+    // 初始化 state
+    constructor() {
+        this.bannerImgs = []
+        this.bannerLen = 0
+    }
+
+    @action bannerData = async () => {
+        const bannerData = await axios.get("/banner")
+        runInAction(() => {
+            this.bannerImgs = bannerData.data.banners
+            this.bannerLen = bannerData.data.banners.length
+            console.log(bannerData.data.banners)
         })
-        .catch(function (error) {
-            console.log(error);
-        });
+    }
 }
+
+export default new Banner()

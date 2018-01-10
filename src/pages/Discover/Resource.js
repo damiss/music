@@ -5,7 +5,6 @@ import classNames from 'classnames';
 
 import styles from './../../style/resource.css'
 import axios from './../../components/axios/index'
-import { login  } from './../../components/store/login'
 
 import Login from './Login'
 import Layer from './../../components/layer/index'
@@ -21,7 +20,6 @@ export default class Resource extends Component {
             [styles.discoverModule]: true,
             [styles.clear]: true
         })
-        console.log(login)
         return (
             <div className={cx}>
                 <div className={styles.hotCon}>
@@ -35,7 +33,7 @@ export default class Resource extends Component {
                     </div>
                 </div> 
                 <div className={styles.r}>
-                    <Login login = { login } />    
+                    <Login />    
                 </div>               
             </div>
         )

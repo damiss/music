@@ -16,7 +16,7 @@ export default class Discover extends Component {
         super(props);
         console.log(this)
         this.state = {
-            _csrf: this.handleGetCookie("_csrf") ? this.handleGetCookie("_csrf") : false
+            _csrf: this.handleGetCookie("_csrf") ? true : false
         }
         this.handleGetCookie = this.handleGetCookie.bind(this)
     }

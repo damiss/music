@@ -8,9 +8,11 @@ import registerServiceWorker from './registerServiceWorker';
 import App from './router/Router'
 import './style/reset.css'
 import login from './components/store/login'
+import banner from './components/store/Banner'
 
 const stores = {
-    login
+    login,
+    banner
 };
 
 ReactDOM.render(
