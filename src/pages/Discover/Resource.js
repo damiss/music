@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { observable, autorun } from 'mobx';
-import { observer } from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 import classNames from 'classnames';
 
 import styles from './../../style/resource.css'
@@ -9,6 +9,7 @@ import axios from './../../components/axios/index'
 import Login from './Login'
 import Layer from './../../components/layer/index'
 
+@inject("login")
 @observer
 export default class Resource extends Component {
     constructor(props) {
@@ -33,7 +34,7 @@ export default class Resource extends Component {
                     </div>
                 </div> 
                 <div className={styles.r}>
-                    <Login />    
+                    <Login />  
                 </div>               
             </div>
         )

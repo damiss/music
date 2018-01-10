@@ -4,7 +4,8 @@
 .myInfo {
     height: 126px;
     padding-top: 0;
-    background-position: 0 0 
+    background-position: 0 0;
+    position: relative; 
 }
 
 .note {
@@ -30,4 +31,11 @@
 }
 .loginBtn:hover {
     background-position: -110px -195px;
+}
+.loginInput {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+    padding: 20px;
 }

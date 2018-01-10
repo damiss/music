@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import classNames from 'classnames'
 import { inject, observer } from 'mobx-react';
 
+import axios from './../../components/axios'
 import styles from './../../style/login.css'
 import Layer from "./../../components/layer/index";
 
@@ -12,33 +13,67 @@ export default class Login extends Component {
         super(props);
 
         this.state = {
-            toggleLogin: false
+            phone: "",
+            password: ""
         }
 
-        this.handleLogin = this.handleLogin.bind(this)
+        this.handleLogin = this.handleLogin.bind(this);
+        this.handleChangePhone = this.handleChangePhone.bind(this);
+        this.handleChangePassWord = this.handleChangePassWord.bind(this);
+        this.handleRefresh = this.handleRefresh.bind(this);
     }
-    handleLogin() {
-        var layer = document.createElement("div");
-        layer.className = "layer";
-        layer.innerHtml = 123;
-        layer.style.height = "100px";
-        layer.style.width = "100px";
-        layer.style.position = "absolute";
-        layer.style.top = "50%";
-        layer.style.left = "50%";
-        layer.style.background = "red";
-        document.body.appendChild(layer);
+
+    handleLogin(event) {
+        this.props.login.loginIn(this.state.phone, this.state.password)
     }
+    handleChangePhone(event) {
+        this.setState({
+            phone: event.target.value
+        })
+    }
+    handleChangePassWord(event) {
+        this.setState({
+            password: event.target.value
+        })
+    }
+    handleRefresh() {
+        axios.get('/login/refresh')
+            .then(function (response) {
+                console.log(response)
+            })
+            .catch(function (error) {
+                console.log(error)
+            })
+    }
+
     render() {
         const cx = classNames({
             [styles.myInfo]: true,
             [styles.lBg]: true
         })
+        const loginInput = classNames({
+            [styles.loginInput]: true
+        })
         return (
             <div>
                 <div className={cx}>
                     <p className={styles.note}>登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机</p>
-                    <a href="javascript:;" onClick={this.handleLogin} className={[styles.lBg, styles.loginBtn].join(" ")}>用户登录</a>
+                    <a href="javascript:;" className={[styles.lBg, styles.loginBtn].join(" ")}>用户登录</a>
+                    {/* <div className={loginInput}>
+                        <div>手&nbsp;&nbsp;机: <input type="text" /></div>
+                        <div>密&nbsp;&nbsp;码: <input type="password"/></div>
+                        <a href="javascript:;">登录</a>
+                    </div> */}
+                    <div className={loginInput}>
+                        <form>
+                            <label>phone: <input type="text" value={this.state.phone} onChange={this.handleChangePhone} /></label>
+                            <label>password: <input type="password" onChange={this.handleChangePassWord} /></label>
+                        </form>
+                        <button onClick={this.handleLogin}>Login</button>
+                        {/* <hr />
+                        <button onClick={this.handleRefresh}>Refresh</button> */}
+                    </div>
+                    
                 </div>
             </div>
         )

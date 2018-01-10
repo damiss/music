@@ -8,8 +8,8 @@ class Login {
 
     // 初始化 state
     constructor() {
-        this.loginState = false;
         this.user = null;
+        this.loginState = false;
     }
 
     @action loginIn = async (phone, password) =>  {
@@ -21,15 +21,9 @@ class Login {
         })
         runInAction(() => {
             this.user = user;
+            this.loginState = true;
             console.log(this.user)
         });
-    }
-
-    @action setLoginState(data) {
-        this.loginState = true;
-    }
-    @action setUser(data) {
-        this.user = data;
     }
 }
 

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { observable, autorun } from 'mobx';
+import { inject, observer } from 'mobx-react';
 
 import SubNav from './../../components/subNav/index'
 import TopList from "./../TopList/index"
@@ -11,6 +13,8 @@ import Cvrlist from './Cvrlist'
 import { personalized } from './../../components/store/Personalized'
 import Recommend from "./Recommend"
 
+@inject('login', )
+@observer
 export default class Discover extends Component {
     constructor(props) {
         super(props);
@@ -23,6 +27,9 @@ export default class Discover extends Component {
 
     componentWillMount() {
         console.log(this.handleGetCookie("_csrf"));
+    }
+    componentWillReceiveProps(nextProps) {
+        console.log('loginstate', nextProps)
     }
 
     handleGetCookie(c_name) {
@@ -38,7 +45,7 @@ export default class Discover extends Component {
         return ""
     }
     render() {
-        const history = this.props.history
+        const history = this.props.history        
         return (
             <div>
                 <SubNav history={history} />
@@ -46,7 +53,7 @@ export default class Discover extends Component {
                 <Resource>
                     <DisNav history={history} title={"热门推荐"} />
                     <Cvrlist history={history} personalized={personalized} />
-                    <RecMix history={history} onLogin={this.state._csrf} />
+                    <RecMix history={history} onLogin={this.state._csrf} loginState={this.props.loginState} />
                 </Resource>
             </div>
         )
@@ -57,10 +64,10 @@ export default class Discover extends Component {
     
 ) */
 function RecMix(props) {
+    console.log(props.props,"discover")
     if (props.onLogin) {
         return (
             <div>
-                {console.log(this)}
                 <DisNav history={props.history} title={"个性化推荐"} />
                 <Recommend />
             </div>
