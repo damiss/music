@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import SubNav from './../../components/subNav/index'
+import classNames from "classnames"
 
 import axios from './../../components/axios/index'
+import styles from './playList.css'
 
 export default class Playlist extends Component {
     constructor(props) {
@@ -25,6 +27,8 @@ export default class Playlist extends Component {
             _this.setState({
                 data: response.data.playlist,
                 tracks: response.data.playlist.tracks,
+                avatarUrl: response.data.playlist.creator.avatarUrl, 
+                nickname: response.data.playlist.creator.nickname,
                 music: ""
             })
         })
@@ -46,11 +50,44 @@ export default class Playlist extends Component {
                 <input type="button" value="播放" onClick={this.handlePlay.bind(this, track.id)}/>
             </li>
         ))
-        console.log(this.state.tracks)
         return (
             <div>
                 <SubNav history={history} />
-                <div style={{textAlign: "center"}}>
+                <div className={[styles.bd]}>
+                    <div className={[styles.mn]}>
+                        <div className={[styles.mnc]}>
+                            <div className={[styles.wrap]}>
+                                <div className={[styles.info, styles.clear].join(" ")}>
+                                    <div className={[styles.cover, styles.coverDj].join(" ")}>
+                                        <img src={this.state.data.coverImgUrl} alt=""/>
+                                        <span className={styles.mask}></span>
+                                    </div>
+                                    <div className={[styles.cnt]}>
+                                        <div className={[styles.cntc]}>
+                                            <div className={[styles.hd, styles.clear].join(" ")}>
+                                                <i className={[styles.icon]}></i>
+                                                <div className={styles.tit}>
+                                                    <h2>{this.state.data.name}</h2>
+                                                </div>
+                                            </div>
+                                            <div className={styles.user}>
+                                                <a href="javascript: ;" className={styles.face}><img src={this.state.avatarUrl} alt=""/></a>
+                                                <span className={styles.name}>
+                                                    <a href="javascript: ;" className={styles.fc}>{this.state.nickname}</a>
+                                                </span>
+                                                <sup className={styles.uicon}></sup>
+                                                <span className={styles.time}></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                {/* <div style={{textAlign: "center"}}>
                     <img width="140px" height="140px" src={this.state.data.coverImgUrl} alt=""/>
                     <hr/>
                     <h2>{this.state.data.description}</h2>
@@ -59,7 +96,7 @@ export default class Playlist extends Component {
                         {tracks}
                     </ul>
                     <audio autoPlay src={this.state.music} controls="controls"></audio>
-                </div>
+                </div> */}
             </div>
         )
     }

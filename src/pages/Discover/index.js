@@ -12,6 +12,7 @@ import DisNav from './../../components/disNav/DisNav'
 import Cvrlist from './Cvrlist'
 import { personalized } from './../../components/store/Personalized'
 import Recommend from "./Recommend"
+import Album from './Album'
 
 @inject('login', )
 @observer
@@ -54,7 +55,9 @@ export default class Discover extends Component {
                     <DisNav history={history} title={"热门推荐"} />
                     <Cvrlist history={history} personalized={personalized} />
                     <RecMix history={history} onLogin={this.state._csrf} loginState={this.props.loginState} />
+                    <Album />
                 </Resource>
+                
             </div>
         )
     }

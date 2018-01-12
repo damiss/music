@@ -9,10 +9,12 @@ import App from './router/Router'
 import './style/reset.css'
 import login from './components/store/login'
 import banner from './components/store/Banner'
+import album from './components/store/Album'
 
 const stores = {
     login,
-    banner
+    banner,
+    album
 };
 
 ReactDOM.render(
