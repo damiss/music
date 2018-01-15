@@ -85,6 +85,11 @@ video {
 
 body {
     line-height: 1;
+    font-size: 12px
+}
+
+i {
+    font-style: normal
 }
 
 :focus {

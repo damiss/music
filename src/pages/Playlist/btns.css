@@ -1,0 +1,243 @@
+.btns {
+    margin-bottom: 25px;
+    margin-right: -10px;
+}
+
+.addply {
+    float: left;
+    color: #fff;
+    background: url("./../../img/button2.png") no-repeat 0 9999px;
+    background-position: right -428px;
+    text-decoration: none;
+    padding: 0 5px 0 0;
+    white-space: nowrap;
+    display: inline-block;
+    height: 31px;
+    line-height: 31px;
+    overflow: hidden;
+    vertical-align: top;
+    text-align: center;
+    cursor: pointer;
+}
+
+.clear::after {
+    clear: both;
+    content: '.';
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.addply i {
+    padding: 0 7px 0 8px;
+    font-family: simsun, \5b8b\4f53;
+    color: #fff;
+    background: url("./../../img/button2.png") no-repeat 0 9999px;
+    background-position: 0 -387px;
+    display: inline-block;
+    height: 31px;
+    line-height: 31px;
+    overflow: hidden;
+    vertical-align: top;
+    text-align: center;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.ply {
+    float: left;
+    width: 20px;
+    height: 18px;
+    margin: 6px 2px 2px 0;
+    background: url("./../../img/button2.png") no-repeat 0 9999px;
+    background-position: 0 -1622px;
+    overflow: hidden;
+}
+
+.add {
+    margin-right: 3px;
+    font-family: simsun, \5b8b\4f53;
+    width: 31px;
+    margin-left: -3px;
+    padding-right: 0;
+    background: url("./../../img/button2.png") no-repeat 0 9999px;
+    background-position: 0 -1588px;
+    color: #333;
+    text-decoration: none;
+    padding: 0 5px 0 0;
+    white-space: nowrap;
+    float: left;
+    height: 31px;
+    line-height: 30px;
+    min-width: 23px;
+    cursor: pointer;
+}
+
+.add:hover {
+    background-position: -40px -1588px;
+}
+
+.fav {
+    margin-right: 3px;
+    background: url("./../../img/button2.png") no-repeat 0 9999px;
+    background-position: right -1020px;
+    color: #333;
+    text-decoration: none;
+    padding: 0 5px 0 0;
+    white-space: nowrap;
+    float: left;
+    height: 31px;
+    line-height: 30px;
+    min-width: 23px;
+    cursor: pointer;
+}
+
+.fav i {
+    background: url("./../../img/button2.png") no-repeat 0 9999px;
+    font-family: simsun, \5b8b\4f53;
+    background-position: 0 -977px;
+    padding-right: 2px;
+    padding-left: 28px;
+    padding: 0 7px 0 36px;
+    float: left;
+    height: 31px;
+    line-height: 30px;
+    min-width: 23px;
+    cursor: pointer;
+}
+
+.fav:hover i {
+    background-position: 0 -1063px;
+}
+
+.share {
+    margin-right: 3px;
+    background: url("./../../img/button2.png") no-repeat 0 9999px;
+    background-position: right -1020px;
+    color: #333;
+    text-decoration: none;
+    padding: 0 5px 0 0;
+    white-space: nowrap;
+    float: left;
+    height: 31px;
+    line-height: 30px;
+    min-width: 23px;
+    cursor: pointer;
+}
+
+.share i {
+    background: url("./../../img/button2.png") no-repeat 0 9999px;
+    font-family: simsun, \5b8b\4f53;
+    padding-right: 2px;
+    padding-left: 28px;
+    padding: 0 7px 0 36px;
+    float: left;
+    height: 31px;
+    line-height: 30px;
+    min-width: 23px;
+    cursor: pointer;
+    background-position: 0 -1225px;
+}
+
+.share:hover i {
+    background-position: 0 -1268px;
+}
+
+.download {
+    margin-right: 3px;
+    font-family: simsun, \5b8b\4f53;
+    background: url("./../../img/button2.png") no-repeat 0 9999px;
+    background-position: right -1106px;
+    padding: 0 5px 0 0;
+    white-space: nowrap;
+    float: left;
+    height: 31px;
+    line-height: 30px;
+    min-width: 23px;
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+}
+
+.download i {
+    background: url("./../../img/button2.png") no-repeat 0 9999px;
+    background-position: 0 -2761px;
+    padding-right: 2px;
+    padding-left: 28px;
+    padding: 0 7px 0 36px;
+    float: left;
+    height: 31px;
+    line-height: 30px;
+    min-width: 23px;
+    cursor: pointer;
+}
+
+.download:hover {
+    background-position: right -1106px;
+}
+
+.comment {
+    margin-right: 3px;
+    font-family: simsun, \5b8b\4f53;
+    background: url("./../../img/button2.png") no-repeat 0 9999px;
+    background-position: right -1020px;
+    color: #333;
+    text-decoration: none;
+    padding: 0 5px 0 0;
+    white-space: nowrap;
+    float: left;
+    height: 31px;
+    line-height: 30px;
+    min-width: 23px;
+    cursor: pointer;
+}
+
+.comment i {
+    background: url("./../../img/button2.png") no-repeat 0 9999px;
+    background-position: 0 -1465px;
+    padding-right: 2px;
+    padding-left: 28px;
+    padding: 0 7px 0 36px;
+    float: left;
+    height: 31px;
+    line-height: 30px;
+    min-width: 23px;
+    cursor: pointer;
+}
+
+.tags {
+    margin: 25px 0 5px;
+    line-height: 22px;
+}
+.btns b {
+    float: left;
+    font-weight: normal;
+    color: #666;
+}
+
+.intr {
+    margin-top: 4px;
+    line-height: 18px;
+    color: #666;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+.fc7 {
+    color: #0c73c2;
+    float: right;
+    cursor: pointer;
+    text-decoration: none;
+}
+.fc7:hover {
+    text-decoration: underline
+}
+.fc7 i {
+        width: 11px;
+        height: 8px;
+        background: url("./../../img/icon.png") no-repeat 0 9999px;
+        background-position: -65px -520px;
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: middle;
+}

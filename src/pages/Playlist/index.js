@@ -5,6 +5,8 @@ import classNames from "classnames"
 import axios from './../../components/axios/index'
 import styles from './playList.css'
 
+import Btns from "./Btns"
+
 export default class Playlist extends Component {
     constructor(props) {
         super(props);
@@ -29,6 +31,9 @@ export default class Playlist extends Component {
                 tracks: response.data.playlist.tracks,
                 avatarUrl: response.data.playlist.creator.avatarUrl, 
                 nickname: response.data.playlist.creator.nickname,
+                createTime: response.data.playlist.createTime,
+                tags: response.data.playlist.tags,
+                description: response.data.playlist.description,
                 music: ""
             })
         })
@@ -42,6 +47,16 @@ export default class Playlist extends Component {
         });
         console.log(id)
     }
+
+    formatDate(date) {
+        var y = date.getFullYear();
+        var m = date.getMonth() + 1;
+        m = m < 10 ? '0' + m : m;
+        var d = date.getDate();
+        d = d < 10 ? ('0' + d) : d;
+        return y + '-' + m + '-' + d;
+    };  
+
     render() {
         const history = this.props.history;
         const tracks = this.state.tracks.map( track => (
@@ -49,7 +64,8 @@ export default class Playlist extends Component {
                 <span>{track.name}</span>---<span>{track.al.name}</span>--<span>{track.ar[0].name}</span>
                 <input type="button" value="播放" onClick={this.handlePlay.bind(this, track.id)}/>
             </li>
-        ))
+        ));
+        let createTime = new Date(this.state.createTime);
         return (
             <div>
                 <SubNav history={history} />
@@ -76,8 +92,9 @@ export default class Playlist extends Component {
                                                     <a href="javascript: ;" className={styles.fc}>{this.state.nickname}</a>
                                                 </span>
                                                 <sup className={styles.uicon}></sup>
-                                                <span className={styles.time}></span>
+                                                <span className={styles.time}>{this.formatDate(createTime)}&nbsp;创建</span>
                                             </div>
+                                            <Btns description={this.state.description} tags={this.state.tags}/>
                                         </div>
                                     </div>
                                 </div>
