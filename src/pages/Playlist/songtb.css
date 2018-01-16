@@ -133,3 +133,43 @@
 .table .af3:after {
     content: '\4e13\8f91';
 }
+
+.table .even td {
+    background-color: #f7f7f7;
+}
+.table td {
+    padding: 6px 10px;
+    line-height: 18px;
+    text-align: left;
+}
+.table td {
+    background: url("./../../img/table.png") no-repeat 0 9999px;
+}
+.table .hd {
+    height: 18px;
+}
+.table .hd .ply {
+    float: right;
+}
+.table .ply {
+    background: url("./../../img/table.png") no-repeat 0 9999px;
+}
+.table .ply {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    background-position: 0 -103px;
+}
+.table .hd .num {
+    width: 25px;
+    margin-left: 5px;
+    color: #999;
+}
+.table .text {
+    width: 100%;
+    position: relative;
+    zoom: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

@@ -11,9 +11,10 @@ import styles from './songtb.css'
 export default class Songtb extends Component {
     constructor(props) {
         super(props)
+
     }
     render() {
-        console.log(this)
+        console.log(this,"render")
         return (
             <div className={styles.songtb}>
                 <div className={[styles.title, styles.clear].join(" ")}>
@@ -45,8 +46,8 @@ export default class Songtb extends Component {
                                 </th>
                             </tr>
                         </thead>
-                        <Tbody>
-                            <Tr />
+                        <Tbody tracks={this.props.data.tracks}>
+                            
                         </Tbody>
                     </table>
                 </div>
@@ -56,38 +57,62 @@ export default class Songtb extends Component {
 }
 
 const Tbody = (props) => {
+    console.log(props)
     return (
         <tbody>
-            {props.children}
+            {/* {
+                props.tracks.map((item) => (
+                    <Tr key={item.al.id} name={item.al.name} />
+                ))
+            } */}
         </tbody>
     )
 }
 const Tr = (props) => {
     return (
-        <tr>
+        <tr className={styles.even}>
             <td className={styles.left}>
                 <div className={styles.hd}>
                     <span className={styles.ply}></span>
                     <span className={styles.num}></span>
                 </div>
             </td>
-            <td class="">
-                <div class="f-cb">
-                    <div class="tt">
-                        <div class="ttc">
-                            <span class="txt">
+            <td className="">
+                <div className="f-cb">
+                    <div className={styles.tt}>
+                        <div className={styles.ttc}>
+                            <span className={styles.txt}>
                                 <Link to="/">
-                                    <b title="When&nbsp;You're&nbsp;Gone">When&nbsp;You'r
-                                        <div class="soil">vHB</div>e&nbsp;Gone
-                                    </b>
+                                    <b>{props.name}</b>
                                 </Link>
                             </span>
                         </div>
                     </div>
                 </div>
             </td>
-            <td></td>
-            <td></td>
+            <td className=" s-fc3">
+                <span className="u-dur ">04:02</span>
+                <div className="opt hshow">
+                    <a className="u-icn u-icn-81 icn-add" href="javascript:;" title="添加到播放列表"></a>
+                    <span className="icn icn-fav" title="收藏"></span>
+                    <span className="icn icn-share" title="分享"></span>
+                    <span className="icn icn-dl" title="下载"></span>
+                </div>
+            </td>
+            <td className="">
+                <div className={styles.text} title="">
+                    <span title="">
+                        <Link to="">张浩威</Link>
+                    </span>
+                </div>
+            </td>
+            <td className="">
+                <div className={styles.text} title="">
+                    <span title="">
+                        <Link to="">张浩威</Link>
+                    </span>
+                </div>
+            </td>
         </tr>
     )
 }
