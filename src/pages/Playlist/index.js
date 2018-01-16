@@ -11,9 +11,7 @@ export default class Playlist extends Component {
         const props = this.props
         return (
             <div>
-                <Info props={props}>
-                </Info>
-                
+                <Info props={props} />
             </div>
         )
     }

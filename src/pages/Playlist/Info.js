@@ -7,6 +7,7 @@ import styles from './playList.css'
 
 import Btns from "./Btns"
 import Songtb from './Songtb'
+import { Demo } from './demo'
 
 export default class Info extends Component {
     constructor(props) {

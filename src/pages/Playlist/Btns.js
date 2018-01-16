@@ -6,31 +6,30 @@ export default class Btns extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            showAll: false
+            showAll: false,
+            more: true
         }
-
-        this.handleSlice = this.handleSlice.bind(this)
-    }
-    handleSlice(str) {
-        let result = str.slice(0, 99);
-        result = result + "...";
-        return result;
+        console.log("btns con")
     }
     handleToggle() {
         this.setState({
             showAll: !this.state.showAll
         })
     }
+    componentDidMount() {
+        
+    }
     render() {
+        console.log("btns render")
         let desc = "";
         desc = String(this.props.description)
         desc = desc.replace(/\n/g, "<br/>")
         let allDesc = "<b>介绍：</b><br />" + desc;
-        if(desc.length > 100) {
+        if (desc.length > 100) {
             desc = desc.slice(0, 99);
             desc = "<b>介绍：</b><br />" + desc + "..."
         }else {
-            return false
+            desc = "<b>介绍：</b>" + desc;
         }
         let showStyle = {
             display: this.state.showAll ? "block" : "none"
@@ -54,13 +53,16 @@ export default class Btns extends Component {
                 </div>
                 <div className={styles.tags}>
                 </div>
-                <div className={styles.intr} dangerouslySetInnerHTML={{ __html: desc }} style={{display: !this.state.showAll ? "block" : "none"}}></div>
+                <div className={styles.intr} dangerouslySetInnerHTML={{ __html: desc }} style={{ display: !this.state.showAll ? "block" : "none" }}></div>
                 <div className={styles.intr} dangerouslySetInnerHTML={{ __html: allDesc }} style={showStyle}></div>
                 <div>
-                    <a href="javascript:;" className={styles.fc7} onClick={this.handleToggle.bind(this)}>{!this.state.showAll ? "展开" : "收起"}<i style={{ backgroundPosition: this.state.showAll ? "-45px -520px" : "-65px -520px"}}></i></a>
-                    </div>
+                    <a href="javascript:;" className={styles.fc7} onClick={this.handleToggle.bind(this)}>
+                        {!this.state.showAll ? "展开" : "收起"}
+                        <i style={{ backgroundPosition: this.state.showAll ? "-45px -520px" : "-65px -520px" }}></i>
+                    </a>
+                </div>
             </div>
-            
+
         )
     }
 }
