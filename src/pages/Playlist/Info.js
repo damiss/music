@@ -8,6 +8,7 @@ import styles from './playList.css'
 import Btns from "./Btns"
 import Songtb from './Songtb'
 import { Demo } from './demo'
+import Comment from './../../components/comment/Comment'
 
 export default class Info extends Component {
     constructor(props) {
@@ -103,21 +104,12 @@ export default class Info extends Component {
                                     </div>
                                 </div>
                                 <Songtb data={this.state.data} tracks={this.state.tracks}/>
+                                <Comment search={this.props.props.location.search} />
                             </div>
                             
                         </div>
                     </div>
                 </div>
-                {/* <div style={{textAlign: "center"}}>
-                    <img width="140px" height="140px" src={this.state.data.coverImgUrl} alt=""/>
-                    <hr/>
-                    <h2>{this.state.data.description}</h2>
-                    <hr/>
-                    <ul>
-                        {tracks}
-                    </ul>
-                    <audio autoPlay src={this.state.music} controls="controls"></audio>
-                </div> */}
             </div>
         )
     }

@@ -1,0 +1,123 @@
+.ncmt {
+    margin-top: 40px;
+}
+
+.utitle {
+    height: 40px;
+    border-bottom: 2px solid #c20c0c;
+}
+
+.utitle1 {
+    height: 33px;
+}
+.utitle h3 {
+    float: left;
+    font-size: 24px;
+    font-weight: normal;
+}
+.utitle1 h3 {
+    font-size: 20px;
+    line-height: 28px;
+}
+.fff2 {
+    font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
+}
+.utitle .sub {
+    float: left;
+    margin: 13px 0 0 10px;
+}
+.utitle1 .sub {
+    margin: 9px 0 0 20px;
+}
+.sfc3,
+a.sfc3:hover {
+    color: #666;
+}
+.mcmmt {
+    margin-top: 20px;
+}
+.mcmmt .cmmts .itm {
+    padding: 15px 0;
+    border-top: 1px dotted #ccc;
+}
+.uhd4 {
+    position: relative;
+    top: 1px;
+    height: 20px;
+    border-bottom: 1px solid #cfcfcf;
+}
+.mcmmt .head,
+.mcmmt .head img {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: -100px;
+}
+.m-cmmt .cmmts img {
+    vertical-align: middle;
+}
+
+.mcmmt .head,
+.mcmmt .head img {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: -100px;
+}
+.mcmmt .cmmts .cntwrap {
+    margin-left: 60px;
+}
+.fbrk {
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+.mcmmt .cmmts .cnt {
+    width: 100%;
+    overflow: hidden;
+    line-height: 20px;
+}
+.mcmmt .cmmts .cntwrap .f-brk,
+.mcmmt .cmmts .cnt.fbrk {
+    word-break: break-word;
+}
+.sfc7,
+a.sfc7:hover {
+    color: #0c73c2;
+}
+.mcmmt .cmmts div.rp {
+    margin-top: 15px;
+    text-align: right;
+}
+.mcmmt .cmmts .time {
+    float: left;
+    margin: 0 !important;
+}
+
+.sfc4,
+a.sfc4:hover {
+    color: #999;
+}
+.uicn2 {
+    background: url("./../../img/icon2.png") no-repeat 0 9999px;
+}
+.uicn,
+.uicn2,
+.uicn3 {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.uicn212,
+.uicn213 {
+    width: 15px;
+    height: 14px;
+    background-position: -150px 0;
+}
+.mcmmt .cmmts .zan {
+    margin-top: -4px;
+}
+.mcmmt .cmmts .sep {
+    margin: 0 8px;
+    color: #ccc;
+}
