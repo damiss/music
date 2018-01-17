@@ -43,7 +43,11 @@
     width: 100%;
     border: 1px solid #d9d9d9;
 }
-
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+}
 .table .w1 {
     width: 74px;
 }
@@ -140,17 +144,7 @@
     margin-left: 5px;
     color: #999;
 }
-.table .txt {
-/*     position: relative;
-    display: inline-block;
-    padding-right: 25px;
-    margin-right: -25px;
-    max-width: 99%;
-    height: 20px; */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
+
 /* .table .ttc {
     height: 18px;
     margin-right: 20px;
@@ -159,6 +153,20 @@
     float: left;
     width: 100%;
 } */
+.table .txt {
+    position: relative;
+    display: inline-block;
+    padding-right: 25px;
+    margin-right: -25px;
+    max-width: 99%;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    top: 4px;
+    margin-top: -4px
+}
+
 :global(a) {
     text-decoration: none;
     cursor: pointer;
@@ -187,6 +195,9 @@
 }
 .table tr:hover .udr {
     display: none;
+}
+.table tr .udr {
+    color: #666;
 }
 .table tr:hover .hshow {
     display: block;
