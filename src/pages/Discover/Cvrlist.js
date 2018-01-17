@@ -40,21 +40,19 @@ export default class Cvrlist extends Component {
         const listData = this.props.personalized.data;
         const _this = this;
         var i = 0;
-        const listHtml = listData.map(function(item) {
-            if(i < 8) {
+        const listHtml = listData.map(function (item) {
+            if (i < 8) {
                 console.log(i)
                 i++;
                 return (
-                    <li key={item.id}
-                        
-                    >
+                    <li key={item.id}>
                         <div className={[styles.cover]}
                             onClick={_this.handleClick.bind(null, item.id)}
                         >
                             <img src={item.picUrl} alt="" />
-                            <a className={styles.mask}></a> 
+                            <a className={styles.mask}></a>
                             <div className={styles.button}>
-                                <span className={styles.iconPlay}></span>    
+                                <span className={styles.iconPlay}></span>
                                 <span className={styles.iconHeadset}></span>
                                 <span className={styles.nb}>
                                     {/* (Math.round((item.playCount /10000) * 100) / 100) */}
@@ -62,10 +60,9 @@ export default class Cvrlist extends Component {
                                         (item.playCount) < 100000
                                             ? parseInt(item.playCount)
                                             : parseInt(item.playCount / 10000) + "万"
-                                    
                                     }
                                 </span>
-                            </div>  
+                            </div>
                         </div>
                         <p className={styles.dec}
                             onClick={_this.handleClick.bind(null, item.id)}
@@ -74,11 +71,11 @@ export default class Cvrlist extends Component {
                         </p>
                     </li>
                 )
-            }else {
+            } else {
                 return;
             }
         })
-        
+
         const cx = classNames({
             [styles.clear]: true,
             [styles.cvrlist]: true
