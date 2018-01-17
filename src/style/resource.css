@@ -1,4 +1,5 @@
 .discoverModule {
+    background: url("./../img/wrap1.png") repeat-y 100% 100%;
     width: 980px;
     min-height: 700px;
     _height: 700px;

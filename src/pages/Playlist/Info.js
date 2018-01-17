@@ -24,11 +24,11 @@ export default class Info extends Component {
     componentDidMount() {
         // axios.get('')
         // console.log(this.props.location.search.replace("?id=", ""));
-        console.log(this.props)
+        console.log("info componentDidMount")
         const _this = this;
         axios.get(`/playlist/detail${this.props.props.location.search}`)
         .then(function(response) {
-            console.log(response);
+            console.log(response,"axios setstate");
             _this.setState({
                 data: response.data.playlist,
                 tracks: response.data.playlist.tracks,
@@ -61,6 +61,7 @@ export default class Info extends Component {
     };  
 
     render() {
+        console.log("info render")
         const history = this.props.history;
         const tracks = this.state.tracks.map( track => (
             <li key={track.id}>
@@ -72,7 +73,7 @@ export default class Info extends Component {
         return (
             <div>
                 <SubNav history={history} />
-                <div className={[styles.bd]}>
+                <div className={[styles.bd, styles.clear].join(" ")}>
                     <div className={[styles.mn]}>
                         <div className={[styles.mnc]}>
                             <div className={[styles.wrap]}>
@@ -101,7 +102,7 @@ export default class Info extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <Songtb data={this.state.data}/>
+                                <Songtb data={this.state.data} tracks={this.state.tracks}/>
                             </div>
                             
                         </div>

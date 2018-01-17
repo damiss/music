@@ -1,20 +1,22 @@
 import React, { Component } from 'react'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from 'react-router-dom'
 
 import styles from './songtb.css'
+import Tbody from './tbody'
 
 export default class Songtb extends Component {
     constructor(props) {
         super(props)
+        
+        this.state = {
+            tracks: []
+        }
+    }
 
+    componentDidMount() {
+        console.log("did")
     }
     render() {
-        console.log(this,"render")
+        console.log("songtb render")
         return (
             <div className={styles.songtb}>
                 <div className={[styles.title, styles.clear].join(" ")}>
@@ -46,7 +48,7 @@ export default class Songtb extends Component {
                                 </th>
                             </tr>
                         </thead>
-                        <Tbody tracks={this.props.data.tracks}>
+                        <Tbody tracks={this.props.tracks}>
                             
                         </Tbody>
                     </table>
@@ -56,15 +58,10 @@ export default class Songtb extends Component {
     }
 }
 
-const Tbody = (props) => {
+/* const Tbody = (props) => {
     console.log(props)
     return (
         <tbody>
-            {/* {
-                props.tracks.map((item) => (
-                    <Tr key={item.al.id} name={item.al.name} />
-                ))
-            } */}
         </tbody>
     )
 }
@@ -115,4 +112,4 @@ const Tr = (props) => {
             </td>
         </tr>
     )
-}
+} */

@@ -31,11 +31,6 @@
     font-weight: bold
 }
 
-.m-table {
-    width: 100%;
-    border: 1px solid #d9d9d9;
-}
-
 .clear::after {
     clear: both;
     content: '.';
@@ -43,31 +38,6 @@
     height: 0;
     visibility: hidden;
 }
-
-/* :global(table) {
-    border-collapse: collapse;
-    border-spacing: 0;
-    table-layout: fixed;
-}
-
-:global(table) {
-    display: table;
-    border-collapse: separate;
-    border-spacing: 2px;
-    border-color: grey;
-}
-
- :global(thead) {
-    display: table-header-group;
-    vertical-align: middle;
-    border-color: inherit;
-}
-
- :global(tr) {
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
-} */
 
 .table {
     width: 100%;
@@ -140,11 +110,13 @@
 .table td {
     padding: 6px 10px;
     line-height: 18px;
+    height: 18px;
     text-align: left;
 }
 .table td {
     background: url("./../../img/table.png") no-repeat 0 9999px;
 }
+
 .table .hd {
     height: 18px;
 }
@@ -153,6 +125,9 @@
 }
 .table .ply {
     background: url("./../../img/table.png") no-repeat 0 9999px;
+}
+.table .ply:hover {
+    background-position: 0 -128px;
 }
 .table .ply {
     width: 17px;
@@ -165,6 +140,36 @@
     margin-left: 5px;
     color: #999;
 }
+.table .txt {
+/*     position: relative;
+    display: inline-block;
+    padding-right: 25px;
+    margin-right: -25px;
+    max-width: 99%;
+    height: 20px; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* .table .ttc {
+    height: 18px;
+    margin-right: 20px;
+}
+.table .tt {
+    float: left;
+    width: 100%;
+} */
+:global(a) {
+    text-decoration: none;
+    cursor: pointer;
+    color: #333;
+}
+:global(b) {
+    font-weight: normal
+}
+:global(a:hover) {
+    text-decoration: underline
+}
 .table .text {
     width: 100%;
     position: relative;
@@ -172,4 +177,78 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.table .text a {
+    white-space: nowrap;
+}
+.table .hshow {
+    display: none;
+}
+.table tr:hover .udr {
+    display: none;
+}
+.table tr:hover .hshow {
+    display: block;
+    position: relative;
+    margin-right: -10px;
+    margin-top: -4px;
+    top: 4px
+}
+.uicn,
+.utitle1 .out .icon {
+    background: url("./../../img/icon.png") no-repeat 0 9999px;
+}
+.uicn81 {
+    width: 13px;
+    height: 13px;
+    background-position: 0 -700px;
+}
+.uicn81:hover {
+    background-position: -22px -700px;
+}
+.uicn,
+.uicn2,
+.uicn3 {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.table .opt {
+    float: left;
+}
+.table .uicn81 {
+    float: left;
+    margin-top: 2px;
+}
+.table .icn {
+    background: url("./../../img/table.png") no-repeat 0 9999px;
+}
+.table .icn {
+    float: left;
+    width: 18px;
+    height: 16px;
+    margin: 2px 0 0 4px;
+    overflow: hidden;
+    text-indent: -999px;
+    cursor: pointer;
+}
+.table .icnfav {
+    background-position: 0 -174px;
+}
+.table .icnfav:hover {
+    background-position: -20px -174px;
+}
+
+.table .icnshare {
+    background-position: 0 -195px;
+}
+.table .icnshare:hover {
+    background-position: -20px -195px;
+}
+.table .icndl:hover {
+    background-position: -104px -174px;
+}
+.table .icndl {
+    background-position: -81px -174px;
 }
