@@ -57,7 +57,13 @@ export default class Cvrlist extends Component {
                                 <span className={styles.iconPlay}></span>    
                                 <span className={styles.iconHeadset}></span>
                                 <span className={styles.nb}>
-                                    {(Math.round((item.playCount /10000) * 100) / 100)}万
+                                    {/* (Math.round((item.playCount /10000) * 100) / 100) */}
+                                    {
+                                        (item.playCount) < 100000
+                                            ? parseInt(item.playCount)
+                                            : parseInt(item.playCount / 10000) + "万"
+                                    
+                                    }
                                 </span>
                             </div>  
                         </div>

@@ -37,18 +37,18 @@ export default class Btns extends Component {
         return (
             <div>
                 <div className={[styles.btns, styles.clear].join(" ")}>
-                    <a href="javascript:;" className={styles.addply}>
+                    <a href="javascript:;" className={styles.addply} title="播放">
                         <i>
                             <em className={styles.ply}></em>
                             播放
                     </i>
                     </a>
-                    <a href="javascript:;" className={styles.add}></a>
+                    <a href="javascript:;" className={styles.add} title="收藏"></a>
                     <a className={[styles.fav]} href="javascript:;">
                         <i>({this.props.data.subscribedCount})</i>
                     </a>
                     <a className={styles.share} href="javascript:;"><i>({this.props.data.shareCount})</i></a>
-                    <a className={styles.download} href="javascript:;"><i>下载</i></a>
+                    <a className={styles.download} href="javascript:;" title="下载"><i>下载</i></a>
                     <a className={styles.comment}><i>(<span id="cnt_comment_count">{this.props.data.commentCount}</span>)</i></a>
                 </div>
                 <div className={styles.tags}>

@@ -31,7 +31,7 @@ export default class Tbody extends React.Component {
                                     <div className={styles.tt}>
                                         <div className={styles.ttc}>
                                             <span className={styles.txt}>
-                                                <Link to="/">
+                                                <Link to="/" title={item.name}>
                                                     {item.name}
                                                 </Link>
                                             </span>
@@ -64,14 +64,14 @@ export default class Tbody extends React.Component {
                             <td className="">
                                 <div className={styles.text} title="">
                                     <span title="">
-                                        <Link to="">{item.ar[0].name}</Link>
+                                        <Link to="" title={item.ar[0].name}>{item.ar[0].name}</Link>
                                     </span>
                                 </div>
                             </td>
                             <td className="">
                                 <div className={styles.text} title="">
                                     <span title="">
-                                        <Link to="">{item.al.name}</Link>
+                                        <Link to="" title={item.al.name}>{item.al.name}</Link>
                                     </span>
                                 </div>
                             </td>
