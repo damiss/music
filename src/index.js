@@ -10,11 +10,13 @@ import './style/reset.css'
 import login from './components/store/login'
 import banner from './components/store/Banner'
 import album from './components/store/Album'
+import todaySong from './components/store/TodaySong'
 
 const stores = {
     login,
     banner,
-    album
+    album,
+    todaySong
 };
 
 ReactDOM.render(

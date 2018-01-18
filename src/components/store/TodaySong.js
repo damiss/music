@@ -12,7 +12,7 @@ class TodaySong {
     @action getData = async () => {
         const songs = await axios.get("/recommend/songs")
         runInAction(() => {
-            this.songList = songs
+            this.songList = songs.data.recommend
             console.log(songs)
         })
     }
