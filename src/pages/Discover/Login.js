@@ -76,7 +76,6 @@ export default class Login extends Component {
                         {/* <hr />
                         <button onClick={this.handleRefresh}>Refresh</button> */}
                     </div>
-                    
                 </div>
             </div>
         )
