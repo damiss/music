@@ -27,6 +27,14 @@ export default class Comment extends React.Component {
                 console.log(error)
             })
     }
+    formatDate(date) {
+        var y = date.getFullYear();
+        var m = date.getMonth() + 1;
+        m = m < 10 ? '0' + m : m;
+        var d = date.getDate();
+        d = d < 10 ? ('0' + d) : d;
+        return y + '-' + m + '-' + d;
+    };
     render() {
         console.log(this)
         return (
@@ -43,8 +51,11 @@ export default class Comment extends React.Component {
                 </div>
                 <div className={styles.mcmmt}>
                     <div className={styles.cmmts}>
-                        <h3 className={styles.uhd4}>精彩评论</h3>
-                        <Com hotCom={this.state.hotComments} />                        
+                        {
+                            this.state.hotComments.length > 0
+                                ? <HotCom hotCom={this.state.hotComments} />
+                                : ""
+                        }
                     </div>
                 </div>
             </div>
@@ -52,25 +63,51 @@ export default class Comment extends React.Component {
     }
 }
 
-const Com = (props) => (
-    <div className={[styles.itm,].join(" ")}>
-        <div className={[styles.head,].join(" ")}>
-            <a href="javascript:;">
-                <img src="http://p1.music.126.net/e925c_8Rssl-19ZjJGd4EQ==/18601537720870676.jpg?param=50y50" />
-            </a>
+const HotCom = function (props) {
+    let date = function(date) {
+        // var y = date.getFullYear();
+        // var m = date.getMonth() + 1;
+        // m = m < 10 ? '0' + m : m;
+        var today = new Date().getDate();
+        var d = date.getDate();
+        // d = d < 10 ? ('0' + d) : d;
+        d = d < today ? ('昨天') : "";
+        var h = date.getHours();
+        h = h < 10 ? ('0' + h) : h;
+        var min = date.getMinutes();
+        min = min < 10 ? ('0' + min) : min;
+        // return y + '-' + m + '-' + d;
+        return d + h + ':' + min 
+    }
+    return (
+        <div>
+            <h3 className={styles.uhd4}>精彩评论</h3>
+            {
+                props.hotCom.map((item) => (
+                    <div key={item.commentId} className={[styles.itm,].join(" ")}>
+                        <div className={[styles.head,].join(" ")}>
+                            <a href="javascript:;">
+                                <img src={item.user.avatarUrl} />
+                            </a>
+                        </div>
+                        <div className={[styles.cntwrap,].join(" ")}>
+                            <div className="">
+                                <div className={[styles.cnt, styles.fbrk,].join(" ")}>
+                                    <a href="javascript:;" className={[styles.cnt, styles.sfc7,].join(" ")}>{item.user.nickname}</a>：{item.content}
+                                </div>
+                            </div>
+                            <div className={[styles.rp,].join(" ")}>
+                                <div className={[styles.time, styles.sfc4,].join(" ")}>
+                                    {date(new Date(item.time))}
+                                </div>
+                                <a href="javascript:void(0)"><i className={[styles.zan, styles.uicn2, styles.uicn212,].join(" ")}></i> ({item.likedCount})</a>
+                                <span className={[styles.sep,].join(" ")}>|</span>
+                                <a href="javascript:void(0)" className={[styles.sfc3,].join(" ")} >回复</a>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
         </div>
-        <div className={[styles.cntwrap,].join(" ")}>
-            <div className="">
-                <div className={[styles.cnt, styles.fbrk,].join(" ")}>
-                    <a href="javascript:;" className={[styles.cnt, styles.sfc7,].join(" ")}>{props.hotCom.user.nickName}</a>：你说你很累，已无法再爱上谁。
-                                    </div>
-            </div>
-            <div className={[styles.rp,].join(" ")}>
-                <div className={[styles.time, styles.sfc4,].join(" ")}>08:53</div>
-                <a href="javascript:void(0)"><i className={[styles.zan, styles.uicn2, styles.uicn212,].join(" ")}></i> (65)</a>
-                <span className={[styles.sep,].join(" ")}>|</span>
-                <a href="javascript:void(0)" className={[styles.sfc3,].join(" ")} >回复</a>
-            </div>
-        </div>
-    </div>
-)
+    )
+}
