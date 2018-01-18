@@ -8,8 +8,14 @@ class Storage {
     get(key) {
         let obj = {};
         obj[key] = localStorage.getItem(key);
-        var str = obj[key];
+        var str = obj[key] || "index";
         return str.replace(/"/g,"");
+    }
+    getUser(key) {
+        let obj = {};
+        obj[key] = localStorage.getItem(key);
+        var str = obj[key];
+        return str;
     }
 }
 

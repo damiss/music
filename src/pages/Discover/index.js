@@ -13,6 +13,7 @@ import Cvrlist from './Cvrlist'
 import { personalized } from './../../components/store/Personalized'
 import Recommend from "./Recommend"
 import Album from './Album'
+import db from './../../components/utils'
 
 @inject('login', )
 @observer
@@ -54,7 +55,7 @@ export default class Discover extends Component {
                 <Resource>
                     <DisNav history={history} title={"热门推荐"} />
                     <Cvrlist history={history} personalized={personalized} />
-                    <RecMix history={history} onLogin={this.state._csrf} loginState={this.props.loginState} />
+                    <RecMix history={history} onLogin={this.state._csrf} loginState={this.props.login.loginState} />
                     <Album />
                 </Resource>
                 
@@ -67,8 +68,8 @@ export default class Discover extends Component {
     
 ) */
 function RecMix(props) {
-    console.log(props.props,"discover")
-    if (props.onLogin) {
+    console.log(props.loginState,"===========================")
+    if (props.loginState) {
         return (
             <div>
                 <DisNav history={props.history} title={"个性化推荐"} />

@@ -14,7 +14,8 @@ export default class Login extends Component {
 
         this.state = {
             phone: "",
-            password: ""
+            password: "",
+            uid: "",
         }
 
         this.handleLogin = this.handleLogin.bind(this);
@@ -45,7 +46,9 @@ export default class Login extends Component {
                 console.log(error)
             })
     }
-
+    handleParse(data) {
+        return JSON.parse(data)
+    }
     render() {
         const cx = classNames({
             [styles.myInfo]: true,
@@ -58,7 +61,7 @@ export default class Login extends Component {
             <div>
                 <div className={cx}>
                     <p className={styles.note}>登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机</p>
-                    <a href="javascript:;" className={[styles.lBg, styles.loginBtn].join(" ")}>用户登录</a>
+                    <a href="javascript:;" className={[styles.lBg, styles.loginBtn].join(" ")}>{this.props.login.name}</a>
                     {/* <div className={loginInput}>
                         <div>手&nbsp;&nbsp;机: <input type="text" /></div>
                         <div>密&nbsp;&nbsp;码: <input type="password"/></div>
