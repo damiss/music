@@ -20,7 +20,7 @@ export default class DisNav extends Component {
         })
         return (
             <div className={cx}>
-                <span className={styles.name} onClick={this.handlePath}>
+                <span className={styles.name}>
                     {this.props.title}
                 </span> 
             </div>

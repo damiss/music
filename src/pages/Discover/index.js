@@ -14,6 +14,7 @@ import { personalized } from './../../components/store/Personalized'
 import Recommend from "./Recommend"
 import Album from './Album'
 import db from './../../components/utils'
+import TopPlay from './TopPlay'
 
 @inject('login', )
 @observer
@@ -56,16 +57,14 @@ export default class Discover extends Component {
                     <DisNav history={history} title={"热门推荐"} />
                     <Cvrlist history={history} personalized={personalized} />
                     <RecMix history={history} onLogin={this.state._csrf} loginState={this.props.login.loginState} />
-                    <Album />
+                    {/* <Album />暂时不加上 新碟上架 */}
+                    <TopPlay />
                 </Resource>
-                
             </div>
         )
     }
 }
-
 /* const RecMix = (props) => (
-    
 ) */
 function RecMix(props) {
     console.log(props.loginState,"===========================")
@@ -73,7 +72,7 @@ function RecMix(props) {
         return (
             <div>
                 <DisNav history={props.history} title={"个性化推荐"} />
-                <Recommend />
+                <Recommend history={props.history} />
             </div>
         )
     }else {

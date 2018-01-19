@@ -1,0 +1,78 @@
+.nbilst {
+    background: url("") no-repeat;
+}
+
+.nbilst {
+    height: 472px;
+    margin-top: 20px;
+    padding-left: 1px;
+}
+
+.nbilst .blk {
+    float: left;
+    width: 230px;
+}
+
+.nbilst .top {
+    height: 100px;
+    padding: 20px 0 0 19px;
+}
+
+.ucover {
+    position: relative;
+    display: block;
+}
+
+.ucover4 {
+    width: 80px;
+    height: 80px;
+}
+
+.nbilst .cver {
+    float: left;
+    display: inline;
+}
+
+.nbilst .tit {
+    float: left;
+    width: 116px;
+    margin: 6px 0 0 10px;
+}
+
+.ffs1 {
+    font-size: 14px;
+}
+
+.fthide {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+.nbilst .tit h3 {
+    width: 100%;
+}
+
+.nbilst .btn {
+    margin-top: 10px;
+}
+
+.sbg,
+.vhd2,
+.ndisk li {
+    background: url() no-repeat 0 9999px;
+}
+
+.sbg9 {
+    background-position: -267px -205px;
+}
+
+.nbilst .btn a {
+    display: block;
+    float: left;
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+    text-indent: -9999px;
+}

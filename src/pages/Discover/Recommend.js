@@ -11,14 +11,19 @@ export default class Recommend extends Component {
     constructor(props) {
         super(props)
         
+        this.handleClick = this.handleClick.bind(this)
     }
     componentDidMount() {
         this.props.recommend.getData()
+    }
+    handleClick(id) {
+        this.props.history.push(`/playlist?id=${id}`)
     }
     render() {
         let data = [];
         data = this.props.recommend.recommend;
         console.log(data)
+        const _this = this
         let num = 0
         let html = data.map(function(item) {
             while(num < 3) {
@@ -26,6 +31,7 @@ export default class Recommend extends Component {
                 return (
                     <li key={item.id}>
                         <div className={[styles.cover]}
+                        onClick={_this.handleClick.bind(null, item.id)}
                         >
                             <img src={item.picUrl} alt="" />
                             <a className={styles.mask}></a>
@@ -36,8 +42,8 @@ export default class Recommend extends Component {
                                     {/* (Math.round((item.playCount /10000) * 100) / 100) */}
                                     {
                                         (item.playCount) < 100000
-                                            ? parseInt(item.playCount)
-                                            : parseInt(item.playCount / 10000) + "万"
+                                            ? parseInt(item.playcount)
+                                            : parseInt(item.playcount / 10000) + "万"
                                     }
                                 </span>
                             </div>
