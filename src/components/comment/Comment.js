@@ -45,7 +45,7 @@ export default class Comment extends React.Component {
                             <span className={[styles.fff2,].join(" ")}>评论</span>
                         </h3>
                         <span className={[styles.sub, styles.sfc3].join(" ")}>
-                            共<span className={[styles.jflag,].join(" ")}>119</span>条评论
+                            共<span className={[styles.jflag,].join(" ")}>{this.state.data.total}</span>条评论
                         </span>
                     </div>
                 </div>

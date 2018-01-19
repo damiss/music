@@ -11,12 +11,14 @@ import login from './components/store/login'
 import banner from './components/store/Banner'
 import album from './components/store/Album'
 import todaySong from './components/store/TodaySong'
+import recommend from './components/store/Recommend'
 
 const stores = {
     login,
     banner,
     album,
-    todaySong
+    todaySong,
+    recommend,
 };
 
 ReactDOM.render(

@@ -7,6 +7,7 @@
     height: 204px;
     padding-left: 42px;
     float: left;
+    position: relative;
 }
 .cover {
     width: 140px;
@@ -92,4 +93,63 @@
 .dec a:hover {
     color: #000;
     text-decoration: underline
+}
+.udate,
+.udate .mask {
+    background: url("./../img/date.png") no-repeat 0 9999px;
+}
+.udate {
+    position: relative;
+    zoom: 1;
+    display: block;
+    width: 140px;
+    height: 140px;
+    background-position: 0 0;
+}
+.udate:hover {
+    text-decoration: none
+}
+.udate .head {
+    display: block;
+    height: 33px;
+    line-height: 33px;
+    color: #fed9d9;
+    font-size: 14px;
+    text-shadow: 0 -1px #962626;
+    text-align: center;
+}
+.udate .bd {
+    display: block;
+    line-height: 102px;
+    text-align: center;
+    font-size: 94px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #202020;
+}
+.udate .mask {
+    position: absolute;
+    top: 33px;
+    left: 0;
+    width: 142px;
+    height: 107px;
+    background-position: 0 -150px;
+    _background-position: 0 0;
+}
+.dec {
+    margin: 8px 0 3px;
+    font-size: 14px;
+}
+.tit {
+    height: auto;
+    max-height: 36px;
+    _height: 36px;
+    overflow: hidden;
+    color: #000;
+    
+}
+.idv {
+    margin-top: 3px;
+    color: #999;
+    width: 100%;
 }
