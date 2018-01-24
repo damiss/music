@@ -1,0 +1,519 @@
+/* .mbtmbar {
+    position: fixed;
+    _position: absolute;
+    zoom: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    width: 100%;
+    z-index: 1002;
+}
+.mplaybar {
+    position: absolute;
+    zoom: 1;
+    top: -53px;
+    left: 0;
+    width: 100%;
+    height: 53px;
+    margin: 0 auto;
+}
+.mplaybar .updn {
+    position: relative;
+    z-index: 11;
+}
+.mplaybar .updn .left {
+    position: absolute;
+    top: -14px;
+    right: 15px;
+    width: 52px;
+    height: 67px;
+    background-position: 0 -380px;
+}
+.mplaybar .updn .left,
+.mplaybar .updn .right,
+.mplaybar .updn .btn,
+.mplaybar .bg,
+.mplaybar .btns a,
+.mplaybar .head .mask,
+.mplaybar .icn,
+.mplaybar .ctrl,
+.mplaybar .tip,
+.mvol .curr,
+.mplaybar .words .mv,
+.mvol .barbg,
+.mplaybar .words .src {
+    background: url("./../../img/playbar.png") no-repeat 0 9999px;
+    _background-image: url("./../../img/playbar.png");
+}
+.ffl {
+    float: left;
+}
+.mplaybar .updn .right {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    width: 15px;
+    height: 54px;
+    background-position: -52px -393px;
+    pointer-events: none;
+}
+.mplaybar .bg {
+    height: 53px;
+    zoom: 1;
+    margin-right: 67px;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+}
+.mplaybar .hand {
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    height: 20px;
+    cursor: pointer;
+}
+.mplaybar .wrap {
+    position: absolute;
+    left: 50%;
+    top: 6px;
+    z-index: 15;
+    width: 980px;
+    height: 47px;
+    margin: 0 auto;
+    margin-left: -490px;
+}
+.mplaybar .btns,
+.mplaybar .head,
+.mplaybar .play,
+.mplaybar .volum,
+.mplaybar .oper {
+    float: left;
+}
+.mplaybar .btns a {
+    display: block;
+    float: left;
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+    margin-top: 5px;
+    text-indent: -9999px;
+}
+.mplaybar .btns .prv {
+    background-position: 0 -130px;
+}
+.mplaybar .btns .ply {
+    width: 36px;
+    height: 36px;
+    margin-top: 0;
+    background-position: 0 -204px;
+}
+.mplaybar .btns .nxt {
+    background-position: -80px -130px;
+}
+.mplaybar .head,
+.mplaybar .head img {
+    width: 34px;
+    height: 34px;
+}
+.m-playbar .head {
+    position: relative;
+    margin: 6px 15px 0 0;
+}
+img,
+.txt {
+    border: 0;
+}
+.mplaybar .head,
+.mplaybar .head img {
+    width: 34px;
+    height: 34px;
+}
+.mplaybar .head .mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+    width: 34px;
+    height: 35px;
+    background-position: 0 -80px;
+}
+.mplaybar .play {
+    position: relative;
+    width: 608px;
+}
+.mplaybar .words {
+    height: 28px;
+    overflow: hidden;
+    color: #e8e8e8;
+    text-shadow: 0 1px 0 #171717;
+    line-height: 28px;
+}
+.fthide {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.mplaybar .words .fc1 {
+    color: #e8e8e8;
+}
+.mplaybar .words .name {
+    max-width: 300px;
+}
+.mplaybar .words .by {
+    max-width: 220px;
+    margin-left: 15px;
+    color: #9b9b9b;
+}
+.mplaybar .words .by a {
+    color: #9b9b9b;
+}
+.mplaybar .words .src {
+    float: left;
+    width: 14px;
+    height: 15px;
+    margin: 7px 0 0 13px;
+    background-position: -110px -103px;
+}
+.mpbar,
+.mpbar .barbg {
+    width: 493px;
+}
+.mpbar {
+    position: relative;
+}
+.mpbar .barbg,
+.mpbar .cur,
+.mpbar .rdy,
+.mpbar .left {
+    background: url() no-repeat 0 9999px;
+    _background-image: url();
+}
+.mpbar,
+.mpbar .barbg {
+    width: 493px;
+}
+.mpbar .barbg,
+.mpbar .cur,
+.mpbar .rdy {
+    height: 9px;
+    background-position: right 0;
+}
+.m-pbar .cur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1%;
+    background-position: left -66px;
+}
+.mpbar .btn,
+.mvol .btn {
+    background: url() no-repeat;
+    _background: url();
+}
+.mpbar .btn {
+    position: absolute;
+    top: -7px;
+    right: -13px;
+    width: 22px;
+    height: 24px;
+    margin-left: -11px;
+    background-position: 0 -250px;
+    _background-position: 0 0;
+}
+em,
+i {
+    font-style: normal;
+    text-align: left;
+    font-size: inherit;
+}
+.mpbar .btn i {
+    visibility: hidden;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: url();
+}
+.mpbar .time {
+    position: absolute;
+    top: -3px;
+    right: -84px;
+    color: #797979;
+    text-shadow: 0 1px 0 #121212;
+}
+.mpbar .time em {
+    color: #a1a1a1;
+}
+.mplaybar .oper {
+    width: 60px;
+}
+.mplaybar .icn {
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin: 11px 2px 0 0;
+    text-indent: -9999px;
+}
+.mplaybar .icnadd {
+    background-position: -88px -163px;
+}
+.mplaybar .icn {
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin: 11px 2px 0 0;
+    text-indent: -9999px;
+}
+.m-playbar .icn-share {
+    background-position: -114px -163px;
+}
+.mplaybar .ctrl {
+    position: relative;
+    z-index: 10;
+    width: 113px;
+    padding-left: 13px;
+    background-position: -147px -238px;
+}
+.mvol {
+    position: absolute;
+    top: -113px;
+    left: 9px;
+    clear: both;
+    width: 32px;
+    height: 113px;
+}
+.mvol .barbg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 113px;
+    background-position: 0 -503px;
+}
+.mvol .vbg,
+.mvol .curr {
+    position: absolute;
+    top: 11px;
+    left: 14px;
+    width: 4px;
+    height: 93px;
+}
+.mvol .curr {
+    top: auto;
+    bottom: 4px;
+    left: 0;
+    background-position: -40px bottom;
+    overflow: hidden;
+}
+.mvol .btn {
+    position: absolute;
+    top: 0;
+    left: -7px;
+    display: block;
+    width: 18px;
+    height: 20px;
+    background-position: -40px -250px;
+    _background-position: 0 0;
+    cursor: pointer;
+}
+.mplaybar .icn {
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin: 11px 2px 0 0;
+    text-indent: -9999px;
+}
+.mplaybar .icnvol {
+    background-position: -2px -248px;
+}
+.mplaybar .icnloop {
+    background-position: -3px -344px;
+}
+
+.fpr {
+    position: relative;
+    zoom: 1;
+}
+.mplaybar .add {
+    float: left;
+    width: 59px;
+    height: 36px;
+}
+.mplaybar .tip {
+    position: absolute;
+    top: -51px;
+    left: -65px;
+    clear: both;
+    width: 152px;
+    height: 49px;
+    background-position: 0 -287px;
+    text-align: center;
+    color: #fff;
+    line-height: 37px;
+}
+.mplaybar .icn {
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin: 11px 2px 0 0;
+    text-indent: -9999px;
+}
+.mplaybar .icnlist {
+    display: block;
+    float: none;
+    width: 38px;
+    padding-left: 21px;
+    background-position: -42px -68px;
+    line-height: 27px;
+    text-align: center;
+    color: #666;
+    text-shadow: 0 1px 0 #080707;
+    text-indent: 0;
+    text-decoration: none;
+}
+.mplaybar .tip1 {
+    top: -35px;
+    left: 12px;
+    width: 81px;
+    height: 39px;
+    line-height: 34px;
+    background-position: 0 -457px;
+} */
+
+.playbar {
+    position: fixed;
+    _position: absolute;
+    zoom: 1;
+    bottom: 53px;
+    left: 0;
+    right: 0;
+    height: 0;
+    width: 100%;
+    z-index: 1002;
+}
+
+.ff1 {
+    float: left
+}
+
+.updn {
+    position: relative;
+    z-index: 11;
+}
+
+.updn .left,
+.updn .btn,
+.updn .right,
+.bg,
+.playbar .btns a {
+    background: url("./../../img/playbar.png") 0 9999px;
+}
+
+.updn .left {
+    position: absolute;
+    top: -14px;
+    right: 15px;
+    width: 52px;
+    height: 67px;
+    background-position: 0 -380px;
+}
+
+.updn .right {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    width: 15px;
+    height: 54px;
+    background-position: -52px -393px;
+    pointer-events: none;
+}
+
+.updn .btn {
+    background-position: -100px -380px;
+}
+
+.updn .btn {
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: 6px 0 0 17px;
+}
+
+.bg {
+    height: 53px;
+    zoom: 1;
+    margin-right: 67px;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+}
+
+.playbar .wrap {
+    position: absolute;
+    left: 50%;
+    top: 6px;
+    z-index: 15;
+    width: 980px;
+    height: 47px;
+    margin: 0 auto;
+    margin-left: -490px;
+}
+
+.playbar .btns {
+    width: 137px;
+    padding: 6px 0 0 0;
+}
+
+.playbar .head,
+.playbar .head img {
+    width: 34px;
+    height: 34px;
+}
+
+.playbar .head {
+    position: relative;
+    margin: 6px 15px 0 0;
+}
+
+.playbar .btns,
+.playbar .head {
+    float: left;
+}
+
+.playbar .btns a {
+    display: block;
+    float: left;
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+    margin-top: 5px;
+    text-indent: -9999px;
+}
+
+.playbar .btns .prv {
+    background-position: 0 -130px;
+}
+
+.playbar .btns .ply {
+    width: 36px;
+    height: 36px;
+    margin-top: 0;
+    background-position: 0 -204px;
+}
+
+.playbar .btns .nxt {
+    background-position: -80px -130px;
+}
+
+.playbar .btns .prv:hover {
+    background-position: -30px -130px;
+}
+
+.playbar .btns .ply:hover {
+    background-position: -40px -204px;
+}
+
+.playbar .btns .nxt:hover {
+    background-position: -110px -130px;
+}

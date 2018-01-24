@@ -60,13 +60,17 @@ export default class Recommend extends Component {
             [styles.clear]: true,
             [styles.cvrlist]: true
         })
+        let date = new Date();
+        let week = date.getDay()
+        let day = date.getDate();
+        console.log(week)
         return (
             <div>
                 <ul className={cx}>
                     <li>
                         <a href="javascript:;" title="每日歌曲推荐" className={[styles.udate].join(" ")}>
-                            <span className={[styles.head].join(" ")}>星期五</span>
-                            <span className={[styles.bd].join(" ")}>19</span>
+                            <span className={[styles.head].join(" ")}>星期{week}</span>
+                            <span className={[styles.bd].join(" ")}>{day}</span>
                             <span className={[styles.mask].join(" ")} title="每日歌曲推荐" href="javascript:;"></span>
                         </a>
                         <p className={[styles.dec].join(" ")}>
