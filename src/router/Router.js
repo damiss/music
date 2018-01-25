@@ -86,7 +86,7 @@ class App extends React.Component {
                         <Route path="/discover" component={Discover} /> 
                         <Route path="/playlist" component={Playlist} /> 
                     </Switch>
-                    
+                    {this.props.children}
                 </div>
             </HashRouter>
         )

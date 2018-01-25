@@ -5,16 +5,40 @@ import {
     Route,
     Link
 } from 'react-router-dom'
-
+import { observer, inject } from 'mobx-react';
+import classNames from 'classnames'
 import styles from './songtb.css'
 
+@inject("play")
+@observer
 export default class Tbody extends React.Component {
     constructor(props) {
         super(props)
         console.log(this.props,"Tbody com props")
+        this.state = {
+            currentIndex: -1
+        }
+
+        this.handlerPlay = this.handlerPlay.bind(this)
+    }
+    handlerPlay(item, event) {
+        this.props.play.addPlay(item)
+        this.setState({
+            currentIndex: event.target.dataset.index
+        })
+        console.log(this.state.currentIndex,"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+/*         console.log(this.playBtn)
+        event.target.style.backgroundPosition = "-20px -128px" */
+    }
+    componentDidMount() {
+        console.log(this.playBtn)
     }
     render() {
         console.log(this.props, "Tbody com props")
+        const play = classNames({
+            [styles.ply]: this.state.onPlay,
+
+        })
         return (
             <tbody>
                 {
@@ -22,7 +46,9 @@ export default class Tbody extends React.Component {
                         <tr className={index % 2 == 0 ? styles.even : ""} key={item.id}>
                             <td className={styles.left}>
                                 <div className={styles.hd}>
-                                    <span className={styles.ply}></span>
+                                    <span className={[styles.ply, index == this.state.currentIndex ? styles.plyzslt : null].join(' ')} data-index={index} title="播放" onClick={this.handlerPlay.bind(null, item)}
+                                        ref={btn => this.playBtn = btn}
+                                    ></span>
                                     <span className={styles.num}>{index + 1}</span>
                                 </div>
                             </td>

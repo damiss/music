@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import styles from  './../../style/home.css'
 import './../../style/reset.css'
 import Discover from './../Discover/index'
-import Play from './../../components/play/Play'
+// import Play from './../../components/play/Play'
 
 
 export default class Home extends Component {
@@ -23,8 +23,10 @@ export default class Home extends Component {
         console.log(this.props, "home")
         return (
             <div>
+
                 <Discover history={history} />
-                <Play />
+                {/* <Play /> */}
+                
             </div>
         )
     }

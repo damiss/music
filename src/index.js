@@ -12,6 +12,8 @@ import banner from './components/store/Banner'
 import album from './components/store/Album'
 import todaySong from './components/store/TodaySong'
 import recommend from './components/store/Recommend'
+import play from './components/store/Play'
+import Play from './components/play/Play'
 
 const stores = {
     login,
@@ -19,12 +21,15 @@ const stores = {
     album,
     todaySong,
     recommend,
+    play,
 };
 
 ReactDOM.render(
     <HashRouter>
         <Provider {...stores}>
-            <App nav="index"/>
+            <App nav="index">
+                <Play />
+            </App>
         </Provider>
     </HashRouter>, 
     document.getElementById('root')

@@ -517,3 +517,143 @@ i {
 .playbar .btns .nxt:hover {
     background-position: -110px -130px;
 }
+.playbar .play {
+    position: relative;
+    width: 608px;
+    float: left;
+}
+.playbar .words {
+    height: 28px;
+    overflow: hidden;
+    color: #e8e8e8;
+    text-shadow: 0 1px 0 #171717;
+    line-height: 28px;
+}
+.playbar .words .name {
+    max-width: 300px;
+}
+.playbar .words .fc1 {
+    color: #e8e8e8;
+}
+.fthide {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.playbar .words .by a {
+    color: #9b9b9b;
+}
+.playbar .words .by {
+    max-width: 220px;
+    margin-left: 15px;
+    color: #9b9b9b;
+}
+.pbar,
+.pbar .barbg {
+    width: 493px;
+}
+.pbar {
+    position: relative;
+}
+.pbar .barbg,
+.pbar .cur,
+.pbar .rdy,
+.pbar .left {
+    background: url("./../../img/statbar.png") no-repeat 0 9999px;
+    _background-image: url("./../../img/statbar.png");
+}
+.pbar .barbg,
+.pbar .cur,
+.pbar .rdy {
+    height: 9px;
+    background-position: right 0;
+}
+.pbar .rdy {
+    background-position: right -30px;
+}
+.pbar .cur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1%;
+    background-position: left -66px;
+}
+.falpha {
+    _behavior: url("http://music.163.com/style/css/iepngfix.htc");
+}
+.ftdn,
+.ftdn:hover {
+    text-decoration: none;
+}
+.pbar .btn,
+.vol .btn {
+    background: url("./../../img/iconall.png") no-repeat;
+    _background: url("./../../img/iconall.png");
+}
+.pbar .btn {
+    position: absolute;
+    top: -7px;
+    right: -13px;
+    width: 22px;
+    height: 24px;
+    margin-left: -11px;
+    background-position: 0 -250px;
+    _background-position: 0 0;
+}
+.pbar .btn:hover {
+    background-position: 0 -280px;
+    _background-position: 0 0;
+}
+.pbar .btn i {
+    visibility: hidden;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: url("./../../img/loading.gif");
+}
+.pbar .time {
+    position: absolute;
+    top: -3px;
+    right: -84px;
+    color: #797979;
+    text-shadow: 0 1px 0 #121212;
+}
+.playbar .btns,
+.playbar .head,
+.playbar .play,
+.playbar .volum,
+.playbar .oper {
+    float: left;
+}
+.playbar .icn {
+    background: url("./../../img/playbar.png") no-repeat 0 9999px;
+}
+.playbar .icn {
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin: 11px 2px 0 0;
+    text-indent: -9999px;
+}
+.playbar .icnadd {
+    background-position: -88px -163px;
+}
+.playbar .icn {
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin: 11px 2px 0 0;
+    text-indent: -9999px;
+}
+.playbar .icnshare {
+    background-position: -114px -163px;
+}
+.playbar .btns .pas {
+    background-position: 0 -165px;
+}
+.playbar .btns .pas:hover {
+    background-position: -40px -165px;
+}

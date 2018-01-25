@@ -139,6 +139,10 @@ table {
     cursor: pointer;
     background-position: 0 -103px;
 }
+.table .plyzslt,
+.table .plyzslt:hover {
+    background-position: -20px -128px;
+}
 .table .hd .num {
     width: 25px;
     margin-left: 5px;
