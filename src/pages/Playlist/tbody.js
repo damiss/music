@@ -26,6 +26,7 @@ export default class Tbody extends React.Component {
         this.setState({
             currentIndex: event.target.dataset.index
         })
+        // this.props.play.addPlay()
         console.log(this.state.currentIndex,"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 /*         console.log(this.playBtn)
         event.target.style.backgroundPosition = "-20px -128px" */
@@ -36,7 +37,7 @@ export default class Tbody extends React.Component {
     render() {
         console.log(this.props, "Tbody com props")
         const play = classNames({
-            [styles.ply]: this.state.onPlay,
+            [styles.ply]: this.state.ifPlay,
 
         })
         return (
